@@ -1,0 +1,39 @@
+---
+title: "Schedule"
+format:
+    html: default
+    #pdf: default
+---
+
+- **L**: Watch lecture videos and respond to survey by **Wednesday at 8pm**.
+
+- **H**: Homework assignments are due by the **end of Sunday (midnight)**.
+
+- **Final project**  
+  - **Data**: Description of data due by September 27 
+  - **Proposal**: Proposal of final project due by November 1  
+  - **Presentation**: Presentation in class on December 17  
+  - **Paper**: Final paper due by December 20  
+
+Week	  | Date          |	Topic	                        |	L	    |	H	    |
+|:------|:--------------|:------------------------------|:------|:------|
+1	    |	Sept 03    	|	Introduction, R, markdown	        |	1	    |		|
+2	    |	Sept 10	    |	Data manipulation	                |	2	    |	1	|
+3	    |	Sept 17     |	Samples, sampling distribution	  |	3	    |	 	|
+4	    |	Sept 24 	  |	ggplot  	                        |	4	    |	Data	|
+5	    |	Oct 01 	    |	ggplot	                          |	5	    |	2	|
+6	    |	Oct 08	    |	Linear regression	                |	6	    |	  |
+7	    |	Oct 15	    |	Linear regression                 |	7	    |	3	|
+8	    |	Oct 22	    |	Linear regression         	      |	8	    |	 	|
+9	    |	Oct 29  	  |	Linear regression    	            |	9	    |	Proposal	|
+10	  |	Nov 05	    |	Linear regression	                |	10    |	4	|
+11	  |	Nov 12	    |	Logistic regression               |	11    |		|
+12	  |	Nov 19	    |	Poisson regression   	            |	12	  |	5 |
+13	  |	Nov 26	    |	NO CLASS              	          |	  	  |		|
+14	  |	Dec 03      |	Survival analysis                 |	13	  |		|
+15	  |	Dec 10    	|	Repeated measures                 |	14	  |	 	|
+16	  |	Dec 17  	  |	Presentations	                    |		    | Final	| 
+
+
+- **All due dates subject to change** due to weather, emergency, scheduling changes, etc. 
+

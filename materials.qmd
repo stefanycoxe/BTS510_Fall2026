@@ -1,0 +1,402 @@
+---
+title: "Materials"
+---
+
+::: {.callout-tip title="Week 0" collapse=false}
+
+## Week 0: Read me first!
+
+* This course will be *dependent on software and technology*. Therefore, in preparation for the first class meeting:
+    * Install R from [here](https://cran.r-project.org/)
+    * Install Rstudio from [here](https://posit.co/download/rstudio-desktop/) (optional but will make your life easier)
+    * Install Quarto from [here](https://quarto.org/docs/get-started/)
+    * Make sure to bring your laptop to class on **Thursday**
+    * We'll troubleshoot to get everything functional in class
+
+* Syllabus  
+    * Take a look at the [syllabus](syllabus.qmd)
+    
+* Introduction
+    * There is a short video [here](https://youtu.be/oUm5mnCuhkY){target="_blank"} to orient you to the course and the **flipped** format
+    * The slides from the video are [here](slides/BTS510-25-0.qmd){target="_blank"}
+
+* Week 1 materials are below
+    * Watch lecture video 1
+    * Complete the lecture survey
+    * This will prepare you for our first in-person meeting on **Thursday morning**
+
+:::
+
+::: {.callout-tip title="Week 1" collapse=false}
+
+## Week 1: Introduction
+
+### Learning objectives
+
+* Review the course topics, structure, and goals
+* Start using **R** and **Rstudio**
+* Start using [Quarto documents](https://quarto.org/) in R as a **reproducible** method to present analyses along with **narrative text**
+
+### Before class: Lecture 
+
+* [Lecture 1](https://youtu.be/M7bNtrjm4XI){target="_blank"} 
+* [Slides (html)](slides/BTS510-25-1.qmd){target="_blank"}
+<!-- * [Lecture survey](https://forms.gle/iQ6SwSbBVg8pTuNt8){target="_blank"}: Complete by Wednesday, September 3 at 8pm -->
+
+    
+### During class: Lab
+
+* [Lab 1 (html with link to code)](lab/BTS510-25-lab1.qmd){target="_blank"}
+
+<!-- * [Completed lab 1 from class](labs_comp/Lab 1.qmd){target="_blank"} -->
+
+### After class: Assignment 
+
+* **No homework this week**
+    
+:::   
+
+
+<!-- ::: {.callout-tip title="Week 2" collapse=true} -->
+
+<!-- ## Week 2: Data manipulation -->
+
+<!-- ### Learning objectives -->
+
+<!-- * Read data into R from external formats (e.g., Excel, .csv, SPSS) -->
+<!-- * Use [**dplyr** functions](https://dplyr.tidyverse.org/) in R to manipulate datasets (e.g., create new variables) -->
+<!-- * Use [**tidyr** functions](https://tidyr.tidyverse.org/) in R to organize and re-structure datasets -->
+
+<!-- ### Before class: Lecture  -->
+
+<!-- * [Lecture 2](https://youtu.be/3oeb6sRvb6E){target="_blank"}  -->
+<!-- * [Lecture survey](https://forms.gle/RKGha2a6iH3ZHGYf6){target="_blank"}: Complete by Wednesday, September 10 at 8pm -->
+<!-- * [Slides (html)](slides/BTS510-25-2.qmd){target="_blank"} -->
+
+<!-- ### During class: Lab -->
+
+<!-- * [CSV file of `gapminder` data](lab/gapminder.csv){target="_blank"} (right/control click and "Save as...") -->
+<!-- * [SPSS file of `gapminder` data](lab/gapminder.sav){target="_blank"} -->
+<!-- * [Lab 2 (html with link to code)](lab/BTS510-25-lab2.qmd){target="_blank"} -->
+<!--   * [Supplement to lab 2](lab/BTS510-25-lab2supp.qmd){target="_blank"} -->
+<!-- * [Completed lab 2 from class](labs_comp/Lab 2.qmd){target="_blank"} -->
+
+<!-- ### After class: Assignment -->
+
+<!-- * [Homework 1](assignments/hw1.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+
+<!-- ::: {.callout-tip title="Week 3" collapse=true} -->
+
+<!-- ## Week 3: Samples and sampling distributions -->
+
+<!-- ### Learning objectives -->
+
+<!-- * Understand **probability** as a measure of **uncertainty** -->
+<!-- * Describe the difference between **population** and **sample** -->
+<!-- * Think about **uncertainty** in sampling -->
+<!-- * **Summarize** uncertainty in sampling: **Sampling distribution** -->
+
+<!-- ### Before class: Lecture  -->
+
+<!-- * [Lecture 3](https://youtu.be/4Y5jtBJqR2A){target="_blank"}  -->
+<!-- * [Lecture survey](https://forms.gle/oFXpkFCXeQYqaRUw6){target="_blank"}: Complete by Wednesday, September 17 at 8pm -->
+<!-- * [Slides (html)](/slides/BTS510-25-3.qmd){target="_blank"} -->
+
+<!-- ### During class: Lab -->
+
+<!-- * [Lab 3 (html with link to code)](/lab/BTS510-25-lab3.qmd){target="_blank"} -->
+<!-- * [Completed lab 3 from class](/labs_comp/Lab 3.qmd){target="_blank"} -->
+
+<!-- ### After class: Assignment -->
+
+<!-- * **No homework this week** -->
+<!-- * **Due next week**: [Data assignment](assignments/data.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Week 4" collapse=true} -->
+
+<!-- ## Week 4: Plots and ggplot -->
+
+<!-- ### Learning objectives -->
+
+<!-- * Select an **appropriate plot** for the **variable type** -->
+<!-- * Create plots in **ggplot2** (part of the **tidyverse**) -->
+
+<!-- ### Before class: Lecture  -->
+
+<!-- * [Lecture 4](https://youtu.be/koiWjRk89YE){target="_blank"}  -->
+<!-- * [Lecture survey](https://forms.gle/Fz72jAi6T14C3MaL8){target="_blank"}: Complete by **Monday, September 29** at 8pm  -->
+<!--   * Remember that we're meeting on Tuesday, September 30 -->
+<!-- * [Slides (html)](/slides/BTS510-25-4.qmd){target="_blank"} -->
+
+<!-- ### During class: Lab -->
+
+<!-- * [Lab 4 (html with link to code)](/lab/BTS510-25-lab4.qmd){target="_blank"} -->
+<!-- * [Completed lab 4 from class](/labs_comp/Lab 4.qmd){target="_blank"} -->
+
+<!-- ### After class: Assignment -->
+
+<!-- * **No homework this week** -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Week 5" collapse=true} -->
+
+<!-- ## Week 5: More plots -->
+
+<!-- ### Learning objectives -->
+
+<!-- * Advanced plotting -->
+<!--   * Color, size, opacity -->
+<!--   * Annotations -->
+<!--   * Changing themes, axis labels, re-ordering categories -->
+<!--   * Complex and combined plots -->
+
+<!-- ### Before class: Lecture  -->
+
+<!-- * [Lecture 5](https://youtu.be/kjAAat9x4gw){target="_blank"}  -->
+<!-- * [Lecture survey](https://forms.gle/3BthcvithxoekqD39){target="_blank"}: Complete by Wednesday, October 8 at 8pm -->
+<!-- * [Slides (html)](/slides/BTS510-25-5.qmd){target="_blank"} -->
+
+<!-- ### During class: Lab -->
+
+<!-- * [Lab 5 (html with link to code)](lab/BTS510-25-lab5.qmd){target="_blank"} -->
+<!-- * [Completed lab 5 from class](/labs_comp/Lab 5.qmd){target="_blank"} -->
+<!-- * See [References](refs.qmd) page for additional **ggplot2** links  -->
+
+<!-- ### After class: Assignment -->
+
+<!-- * [Homework 2](assignments/hw2.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Week 6" collapse=true} -->
+
+<!-- ## Week 6: Linear regression -->
+
+<!-- ### Learning objectives -->
+
+<!-- * Describe the logic of **linear regression**  -->
+<!-- * Describe the **assumptions** of linear regression -->
+<!-- * Briefly **present results** of linear regression -->
+<!-- * Use a **regression equation** to summarize a model -->
+<!-- * Compare and contrast **observed**, **predicted**, and **residual** values -->
+
+<!-- ### Before class: Lecture  -->
+
+<!-- * [Lecture 6](https://youtu.be/vpc5tPeeh9I){target="_blank"}  -->
+<!-- * [Lecture survey](https://forms.gle/95Q3NFnqLKSSQ22K8){target="_blank"}: Complete by Wednesday, October 15 at 8pm -->
+<!-- * [Slides (html)](/slides/BTS510-25-6.qmd){target="_blank"} -->
+
+<!-- ### During class: Lab -->
+
+<!-- * [Lab 6 (html with link to code)](lab/BTS510-25-lab6.qmd){target="_blank"} -->
+<!-- * [Completed lab 6 from class](/labs_comp/Lab 6.qmd){target="_blank"} -->
+
+<!-- ### After class: Assignment -->
+
+<!-- * **No homework this week** -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Week 7" collapse=true} -->
+
+<!-- ## Week 7: Linear regression -->
+
+<!-- ### Learning objectives -->
+
+<!-- * **Add predictors** to a linear regression model -->
+<!-- * Interpret **partial regression coefficients** -->
+<!-- * **Re-code predictors** to answer your research questions -->
+<!-- * **Compare** different models using $R^2_{change}$ -->
+
+<!-- ### Before class: Lecture  -->
+
+<!-- * [Lecture 7](https://youtu.be/4RlIZbH6oro){target="_blank"}  -->
+<!-- * [Lecture survey](https://forms.gle/1i8YJbLsuDDtDSwdA){target="_blank"}: Complete by Wednesday, October 22 at 8pm -->
+<!-- * [Slides (html)](/slides/BTS510-25-7.qmd){target="_blank"} -->
+<!--   * **Note**: Errors *in the video* on slides 18 and 19 (re: degrees of freedom) are fixed on the slides here -->
+
+<!-- ### During class: Lab -->
+
+<!-- * [Lab 7 (html with link to code)](lab/BTS510-25-lab7.qmd){target="_blank"} -->
+<!-- * [Completed lab 7 from class](/labs_comp/Lab 7.qmd){target="_blank"} -->
+<!-- * [Photo of whiteboard from class](whiteboard 102325.jpg){target="_blank"} -->
+
+<!-- ### After class: Assignment -->
+
+<!-- * [Homework 3](assignments/hw3.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Week 8" collapse=true} -->
+
+<!-- ## Week 8: Linear regression -->
+
+<!-- ### Learning objectives -->
+
+<!-- * **Assess** models for **(multi)collinearity** among predictors -->
+<!-- * **Conduct** outlier analyses to determine extreme and/or problematic cases -->
+
+<!-- ### Before class: Lecture  -->
+
+<!-- * [Lecture 8](https://youtu.be/Qf_NSblMUk8){target="_blank"}  -->
+<!-- * [Lecture survey](https://forms.gle/hXGTZp2HWpoT3Mhy7){target="_blank"}: Complete by Wednesday, October 29 at 8pm -->
+<!-- * [Slides (html)](/slides/BTS510-25-8.qmd){target="_blank"} -->
+
+<!-- ### During class: Lab -->
+
+<!-- * [Lab 8 (html with link to code)](lab/BTS510-25-lab8.qmd){target="_blank"} -->
+<!-- * [Completed lab 8 from class](/labs_comp/Lab 8.qmd){target="_blank"} -->
+
+<!-- ### After class: Assignment -->
+
+<!-- * [Proposal](assignments/proposal.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Week 9" collapse=true} -->
+
+<!-- ## Week 9: Linear regression -->
+
+<!-- ### Learning objectives -->
+
+<!-- * **Describe** *maximum likelihood estimation* for linear regression  -->
+<!-- * **Describe** *hypothesis testing* for linear regression coefficients, including the sampling distribution used and degrees of freedom -->
+
+<!-- ### Before class: Lecture  -->
+
+<!-- * [Lecture 9 - part 1](https://youtu.be/SauO09Zh3lM){target="_blank"}  -->
+<!-- * [Lecture 9 - part 2](https://youtu.be/Ozf-3xjOxxw){target="_blank"} -->
+<!-- * [Lecture survey](https://forms.gle/EtiNVmUa1KbiCdkTA){target="_blank"}: Complete by Wednesday, November 5 at 8pm -->
+<!-- * [Slides (html)](/slides/BTS510-25-9.qmd){target="_blank"} -->
+
+<!-- ### During class: Lab -->
+
+<!-- * [Lab 9 (html with link to code)](lab/BTS510-25-lab9.qmd){target="_blank"} -->
+<!-- * [Completed lab 9 from class](/labs_comp/Lab 9.qmd){target="_blank"} -->
+
+<!-- ### After class: Assignment -->
+
+<!-- * **No homework this week** -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Week 10" collapse=true} -->
+
+<!-- ## Week 10: Linear regression -->
+
+<!-- ### Learning objectives -->
+
+<!-- * **Run models** with interaction effects to assess conditional effects of predictors -->
+<!-- * **Probe** interaction models to fully understand all effects -->
+
+<!-- ### Before class: Lecture  -->
+
+<!-- * [Lecture 10](https://youtu.be/dFVZkOHuauk){target="_blank"} -->
+<!-- * [Lecture survey](https://forms.gle/FrV8DsL8icyQmUBB6){target="_blank"}: Complete by Wednesday, November 12 at 8pm -->
+<!-- * [Slides (html)](/slides/BTS510-25-10.qmd){target="_blank"} -->
+
+<!-- ### During class: Lab -->
+
+<!-- * [Lab 10 (html with link to code)](lab/BTS510-25-lab10.qmd){target="_blank"} -->
+<!-- * [Completed lab 10 from class](/labs_comp/Lab 10.qmd){target="_blank"} -->
+<!-- * [Photo of whiteboard from class](whiteboard 111325.jpg){target="_blank"} -->
+
+<!-- ### After class: Assignment -->
+
+<!-- * [Homework 4](assignments/hw4.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Week 11" collapse=true} -->
+
+<!-- ## Week 11: Logistic regression -->
+
+<!-- ### Learning objectives -->
+
+<!-- * **Conduct** logistic regression for *binary outcomes* -->
+<!-- * **Interpret** results in terms of *probability*, *odds*, and *log-odds* -->
+
+<!-- ### Before class: Lecture  -->
+
+<!-- * [Lecture 11](https://youtu.be/E5sa61W9fd0){target="_blank"}  -->
+<!-- * [Lecture survey](https://forms.gle/WdsDKN4jYmZcVGYi9){target="_blank"}: Complete by Wednesday, November 19 at 8pm -->
+<!-- * [Slides (html)](/slides/BTS510-25-11.qmd){target="_blank"} -->
+
+<!-- ### During class: Lab -->
+
+<!-- * [Lab 11 (html with link to code)](lab/BTS510-25-lab11.qmd){target="_blank"} -->
+<!-- * [Completed lab 11 from class](/labs_comp/Lab 11.qmd){target="_blank"} -->
+<!-- * [Photo of whiteboard from class](whiteboard 112025.jpg){target="_blank"} -->
+
+<!-- ### After class: Assignment -->
+
+<!-- * **No homework this week** -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Week 12" collapse=true} -->
+
+<!-- ## Week 12: Poisson regression -->
+
+<!-- ### Learning objectives -->
+
+<!-- * **Conduct** Poisson regression for *count outcomes* -->
+<!-- * **Interpret** results in terms of *predicted counts* -->
+<!-- * **Describe** when to use alternative models / specifications -->
+<!--   * Negative binomial, inflated zeroes, offset, etc. -->
+
+<!-- ### Before class: Lecture  -->
+
+<!-- * [Lecture 12](https://youtu.be/E46GrcnrBTc){target="_blank"}  -->
+<!-- * [Lecture survey](https://forms.gle/3FuYhAXqy91kAdfw8){target="_blank"}: Complete by Wednesday, December 3 at 8pm -->
+<!-- * [Slides (html)](/slides/BTS510-25-12.qmd){target="_blank"} -->
+
+<!-- ### During class: Lab -->
+
+<!-- * [Lab 12 (html with link to code)](/lab/BTS510-25-lab12.qmd){target="_blank"} -->
+<!--   * [Data for lab](/slides/jpapoisson.txt) (right click, save as...) -->
+<!-- * [Completed lab 12 from class](/labs_comp/Lab 12.qmd){target="_blank"} -->
+
+<!-- ### After class: Assignment -->
+
+<!-- * [Homework 5](/assignments/hw5.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Week 13" collapse=false} -->
+
+<!-- ## Week 13: Survival analysis -->
+
+<!-- ### Learning objectives -->
+
+<!-- * **Conduct** analysis on time-to-event outcomes -->
+<!--   * Kaplan-Meier curve, proportional hazards regression -->
+<!-- * **Describe** issues related to time-to-event analysis -->
+<!--   * Censoring, proportional hazards, time-varying predictors -->
+
+<!-- ### Before class: Lecture  -->
+
+<!-- * [Lecture 13](https://youtu.be/I1Qt71xTy-U){target="_blank"}  -->
+<!-- * [Lecture survey](https://forms.gle/b2TmcDQkzbkstU2t5){target="_blank"}: Complete by Wednesday, December 10 at 8pm -->
+<!-- * [Slides (html)](/slides/BTS510-25-13.qmd){target="_blank"} -->
+
+<!-- ### During class: Lab -->
+
+<!-- * [Lab 13 (html with link to code)](/lab/BTS510-25-lab13.qmd){target="_blank"} -->
+
+<!-- ### After class: Assignment -->
+
+<!-- * **No homework this week** -->
+
+<!-- ::: -->
+
+
+
+
+

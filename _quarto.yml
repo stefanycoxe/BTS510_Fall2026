@@ -1,0 +1,26 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "BTS 510 Fall 2026"
+  sidebar:
+    logo: "BTS510_F26.png"
+    style: "docked"       
+    search: true   
+    collapse-level: 1                   
+    contents:
+      - index.qmd      
+      - syllabus.qmd                         
+      - schedule.qmd        
+      - materials.qmd
+      - assignments.qmd                       
+      - refs.qmd         
+
+              
+format:   
+  html: 
+    number-sections: false  
+    theme: yeti
+    css: styles.css
+    toc: true

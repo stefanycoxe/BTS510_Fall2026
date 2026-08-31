@@ -1,0 +1,72 @@
+---
+title: "Assignments"
+---
+
+::: {.callout-tip title="Final Project" collapse=true}
+
+**Big picture**: You will select a dataset, propose some research questions that can be answered using linear models (i.e., regression), write up the results, and present your findings to the class.
+
+* There will be 4 parts to the project throughout the semester
+  * Dataset selection
+  * Proposal
+  * Presentation
+  * Final paper
+  
+<!-- ::: {.callout-note title="Part 1: Due September 27, 2025" collapse=true} -->
+
+<!-- * [Dataset selection](assignments/data.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-note title="Part 2: Due November 1, 2025" collapse=true} -->
+
+<!-- * [Proposal](assignments/proposal.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-note title="Part 3: Due December 17, 2025" collapse=false} -->
+
+<!-- * [Presentation](assignments/present.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-note title="Part 4: Due December 20, 2025" collapse=false} -->
+
+<!-- * [Paper](assignments/paper.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+:::
+
+::: {.callout-tip title="Homework 1: Due September 13, 2025" collapse=true}
+
+* Homework 1: To be added
+
+<!-- * [Homework 1](assignments/hw1.qmd){target="_blank"} -->
+
+:::
+
+
+<!-- ::: {.callout-tip title="Homework 2: Due October 4, 2025" collapse=true} -->
+
+<!-- * [Homework 2](assignments/hw2.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Homework 3: Due October 18, 2025" collapse=true} -->
+
+<!-- * [Homework 3](assignments/hw3.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Homework 4: Due November 8, 2025" collapse=true} -->
+
+<!-- * [Homework 4](assignments/hw4.qmd){target="_blank"} -->
+
+<!-- ::: -->
+
+<!-- ::: {.callout-tip title="Homework 5: Due November 22, 2025" collapse=false} -->
+
+<!-- * [Homework 5](assignments/hw5.qmd){target="_blank"} -->
+
+<!-- ::: -->
