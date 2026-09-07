@@ -38,11 +38,9 @@ title: "Assignments"
 
 :::
 
-::: {.callout-tip title="Homework 1: Due September 13, 2025" collapse=true}
+::: {.callout-tip title="Homework 1: Due September 13, 2026" collapse=false}
 
-* Homework 1: To be added
-
-<!-- * [Homework 1](assignments/hw1.qmd){target="_blank"} -->
+* [Homework 1](assignments/hw1.qmd){target="_blank"}
 
 :::
 
