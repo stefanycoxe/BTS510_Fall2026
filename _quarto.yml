@@ -12,7 +12,7 @@ website:
     contents:
       - index.qmd      
       - syllabus.qmd                         
-      - schedule.qmd        
+      - schedule.qmd             
       - materials.qmd
       - assignments.qmd                       
       - refs.qmd         
