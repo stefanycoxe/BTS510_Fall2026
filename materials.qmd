@@ -86,7 +86,7 @@ title: "Materials"
 :::
 
 
-::: {.callout-tip title="Week 3" collapse=false}
+::: {.callout-tip title="Week 3" collapse=true}
 
 ## Week 3: Samples and sampling distributions
 
@@ -113,32 +113,29 @@ title: "Materials"
 
 :::
 
-<!-- ::: {.callout-tip title="Week 4" collapse=true} -->
+::: {.callout-tip title="Week 4" collapse=false}
 
-<!-- ## Week 4: Plots and ggplot -->
+## Week 4: Plots and ggplot
 
-<!-- ### Learning objectives -->
+### Learning objectives
 
-<!-- * Select an **appropriate plot** for the **variable type** -->
-<!-- * Create plots in **ggplot2** (part of the **tidyverse**) -->
+* Select an **appropriate plot** for the **variable type**
+* Create plots in **ggplot2** (part of the **tidyverse**)
 
-<!-- ### Before class: Lecture  -->
+### Before class: Lecture
 
-<!-- * [Lecture 4](https://youtu.be/koiWjRk89YE){target="_blank"}  -->
-<!-- * [Lecture survey](https://forms.gle/Fz72jAi6T14C3MaL8){target="_blank"}: Complete by **Monday, September 29** at 8pm  -->
-<!--   * Remember that we're meeting on Tuesday, September 30 -->
-<!-- * [Slides (html)](/slides/BTS510-25-4.qmd){target="_blank"} -->
+* [Lecture 4](https://youtu.be/koiWjRk89YE){target="_blank"}
+* [Slides (html)](/slides/BTS510-25-4.qmd){target="_blank"}
 
-<!-- ### During class: Lab -->
+### During class: Lab
 
-<!-- * [Lab 4 (html with link to code)](/lab/BTS510-25-lab4.qmd){target="_blank"} -->
-<!-- * [Completed lab 4 from class](/labs_comp/Lab 4.qmd){target="_blank"} -->
+* [Lab 4 (html with link to code)](/lab/BTS510-25-lab4.qmd){target="_blank"}
 
-<!-- ### After class: Assignment -->
+### After class: Assignment
 
-<!-- * **No homework this week** -->
+* [Data assignment](assignments/data.qmd){target="_blank"}
 
-<!-- ::: -->
+:::
 
 <!-- ::: {.callout-tip title="Week 5" collapse=true} -->
 
