@@ -78,6 +78,11 @@ There will be **five (5)** homework assignments. The assignments generally invol
 
 You will select a dataset, propose some research questions that can be answered using linear models, write up the results, and present your findings to the class. More details to follow throughout the semester.
 
+* Dataset selection: 5% of project grade
+* Proposal: 15% of project grade
+* Presentation: 40% of project grade
+* Final paper: 40% of project grade
+
 ### Tentative schedule
 
 Week	  | Date          |	Topic	                        |	L	    |	H	    |
