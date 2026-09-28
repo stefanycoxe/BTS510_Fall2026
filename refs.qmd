@@ -62,9 +62,21 @@ Springer.
 
 * Themes
     * Built-in: [https://ggplot2-book.org/themes#sec-themes](https://ggplot2-book.org/themes#sec-themes)
-    * ggthemes package: [https://github.com/jrnold/ggthemes](https://github.com/jrnold/ggthemes)
+    * **ggthemes** package: [https://github.com/jrnold/ggthemes](https://github.com/jrnold/ggthemes)
+    
+* Extensions: [https://exts.ggplot2.tidyverse.org/](https://exts.ggplot2.tidyverse.org/)
 
 * Shapes in ggplots: [https://r-graphics.org/RECIPE-SCATTER-SHAPES.html#discussion-28](https://r-graphics.org/RECIPE-SCATTER-SHAPES.html#discussion-28)
+
+* Animation (in conjunction with **ggplot2**)
+    * **plotly**: [https://plotly-r.com/](https://plotly-r.com/)
+    * **gganimate**: [https://cran.r-project.org/web/packages/gganimate/vignettes/gganimate.html](https://cran.r-project.org/web/packages/gganimate/vignettes/gganimate.html)
+    
+* Interactivity (in conjunction with **ggplot2**)
+    * **shiny**: [https://shiny.posit.co/](https://shiny.posit.co/)
+    * **shiny** document: [https://pkg.yihui.org/rmarkdown-book/shiny-documents](https://pkg.yihui.org/rmarkdown-book/shiny-documents)
+    * **shinydashboard**: [https://rstudio.github.io/shinydashboard/](https://rstudio.github.io/shinydashboard/)
+    * **flexdashboard**: [https://rstudio.github.io/flexdashboard/](https://rstudio.github.io/flexdashboard/)
 
 ## Linear models
 

@@ -12,7 +12,7 @@ title: "Assignments"
   * Presentation
   * Final paper
   
-::: {.callout-note title="Part 1: Due September 27, 2026" collapse=false}
+::: {.callout-note title="Part 1: Due September 27, 2026" collapse=true}
 
 * [Dataset selection](assignments/data.qmd){target="_blank"}
 
@@ -45,11 +45,11 @@ title: "Assignments"
 :::
 
 
-<!-- ::: {.callout-tip title="Homework 2: Due October 4, 2026" collapse=true} -->
+::: {.callout-tip title="Homework 2: Due October 4, 2026" collapse=false}
 
-<!-- * [Homework 2](assignments/hw2.qmd){target="_blank"} -->
+* [Homework 2](assignments/hw2.qmd){target="_blank"}
 
-<!-- ::: -->
+:::
 
 <!-- ::: {.callout-tip title="Homework 3: Due October 18, 2026" collapse=true} -->
 

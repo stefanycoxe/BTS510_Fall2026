@@ -113,7 +113,7 @@ title: "Materials"
 
 :::
 
-::: {.callout-tip title="Week 4" collapse=false}
+::: {.callout-tip title="Week 4" collapse=true}
 
 ## Week 4: Plots and ggplot
 
@@ -137,35 +137,33 @@ title: "Materials"
 
 :::
 
-<!-- ::: {.callout-tip title="Week 5" collapse=true} -->
+::: {.callout-tip title="Week 5" collapse=false}
 
-<!-- ## Week 5: More plots -->
+## Week 5: More plots
 
-<!-- ### Learning objectives -->
+### Learning objectives
 
-<!-- * Advanced plotting -->
-<!--   * Color, size, opacity -->
-<!--   * Annotations -->
-<!--   * Changing themes, axis labels, re-ordering categories -->
-<!--   * Complex and combined plots -->
+* Advanced plotting
+  * Color, size, opacity
+  * Annotations
+  * Changing themes, axis labels, re-ordering categories
+  * Complex and combined plots
 
-<!-- ### Before class: Lecture  -->
+### Before class: Lecture
 
-<!-- * [Lecture 5](https://youtu.be/kjAAat9x4gw){target="_blank"}  -->
-<!-- * [Lecture survey](https://forms.gle/3BthcvithxoekqD39){target="_blank"}: Complete by Wednesday, October 8 at 8pm -->
-<!-- * [Slides (html)](/slides/BTS510-25-5.qmd){target="_blank"} -->
+* [Lecture 5](https://youtu.be/kjAAat9x4gw){target="_blank"}
+* [Slides (html)](/slides/BTS510-25-5.qmd){target="_blank"}
 
-<!-- ### During class: Lab -->
+### During class: Lab
 
-<!-- * [Lab 5 (html with link to code)](lab/BTS510-25-lab5.qmd){target="_blank"} -->
-<!-- * [Completed lab 5 from class](/labs_comp/Lab 5.qmd){target="_blank"} -->
-<!-- * See [References](refs.qmd) page for additional **ggplot2** links  -->
+* [Lab 5 (html with link to code)](lab/BTS510-25-lab5.qmd){target="_blank"}
+* See [References](refs.qmd) page for additional **ggplot2** links, including themes, animation, interactivity
 
-<!-- ### After class: Assignment -->
+### After class: Assignment
 
-<!-- * [Homework 2](assignments/hw2.qmd){target="_blank"} -->
+* [Homework 2](assignments/hw2.qmd){target="_blank"}
 
-<!-- ::: -->
+:::
 
 <!-- ::: {.callout-tip title="Week 6" collapse=true} -->
 
