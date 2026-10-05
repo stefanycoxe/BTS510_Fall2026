@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>BTS 510 Lab 3 – BTS 510 Fall 2026</title>
+<title>BTS 510 Lab 6 – BTS 510 Fall 2026</title>
 <style>
 
 span.smallcaps{font-variant: small-caps;}
@@ -4093,7 +4093,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">BTS 510 Lab 3</li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">BTS 510 Lab 6</li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -4166,15 +4166,8 @@ window.Quarto = {
    
   <ul>
   <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link active" data-scroll-target="#learning-objectives"><span class="header-section-number">1</span> Learning objectives</a></li>
-  <li><a href="#mathematically-derived-sampling-distribution" id="toc-mathematically-derived-sampling-distribution" class="nav-link" data-scroll-target="#mathematically-derived-sampling-distribution"><span class="header-section-number">2</span> Mathematically-derived sampling distribution</a></li>
-  <li><a href="#computationally-derived-sampling-distribution" id="toc-computationally-derived-sampling-distribution" class="nav-link" data-scroll-target="#computationally-derived-sampling-distribution"><span class="header-section-number">3</span> Computationally-derived sampling distribution</a>
-  <ul class="collapse">
-  <li><a href="#getting-started" id="toc-getting-started" class="nav-link" data-scroll-target="#getting-started"><span class="header-section-number">3.1</span> Getting started</a></li>
-  <li><a href="#standard-normal-population-population-sim-mathcaln0-1" id="toc-standard-normal-population-population-sim-mathcaln0-1" class="nav-link" data-scroll-target="#standard-normal-population-population-sim-mathcaln0-1"><span class="header-section-number">3.2</span> Standard Normal population: <span class="math inline">population \sim \mathcal{N}(0, 1)</span></a></li>
-  <li><a href="#bernoulli-population-population-sim-b0.3" id="toc-bernoulli-population-population-sim-b0.3" class="nav-link" data-scroll-target="#bernoulli-population-population-sim-b0.3"><span class="header-section-number">3.3</span> Bernoulli population: <span class="math inline">population \sim B(0.3)</span></a></li>
-  <li><a href="#poisson-population-population-sim-poisson1.5" id="toc-poisson-population-population-sim-poisson1.5" class="nav-link" data-scroll-target="#poisson-population-population-sim-poisson1.5"><span class="header-section-number">3.4</span> Poisson population: <span class="math inline">population \sim Poisson(1.5)</span></a></li>
-  </ul></li>
-  <li><a href="#summarize-results" id="toc-summarize-results" class="nav-link" data-scroll-target="#summarize-results"><span class="header-section-number">4</span> Summarize results</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">2</span> Data</a></li>
+  <li><a href="#tasks" id="toc-tasks" class="nav-link" data-scroll-target="#tasks"><span class="header-section-number">3</span> Tasks</a></li>
   </ul>
 </nav>
     </div>
@@ -4183,7 +4176,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title">BTS 510 Lab 3</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+<div class="quarto-title-block"><div><h1 class="title">BTS 510 Lab 6</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -4201,7 +4194,8 @@ window.Quarto = {
 
 
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
 ✔ dplyr     1.2.1     ✔ readr     2.2.0
@@ -4214,491 +4208,64 @@ window.Quarto = {
 ✖ dplyr::lag()    masks stats::lag()
 ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <section id="learning-objectives" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="learning-objectives"><span class="header-section-number">1</span> Learning objectives</h2>
 <ul>
-<li>Understand <strong>probability</strong> as a measure of <strong>uncertainty</strong></li>
-<li><strong>Summarize</strong> probabilities with <em>probability distributions</em></li>
-<li>Think about <strong>uncertainty</strong> in sampling</li>
-<li><strong>Summarize</strong> uncertainty in sampling: <strong>Sampling distribution</strong></li>
+<li>Describe the logic of <strong>linear regression</strong></li>
+<li>Describe the <strong>assumptions</strong> of linear regression</li>
+<li>Briefly <strong>present results</strong> of linear regression</li>
+<li>Use a <strong>regression equation</strong> to summarize a model</li>
+<li>Compare and contrast <strong>observed</strong>, <strong>predicted</strong>, and <strong>residual</strong> values</li>
 </ul>
 </section>
-<section id="mathematically-derived-sampling-distribution" class="level2" data-number="2">
-<h2 data-number="2" class="anchored" data-anchor-id="mathematically-derived-sampling-distribution"><span class="header-section-number">2</span> Mathematically-derived sampling distribution</h2>
+<section id="data" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="data"><span class="header-section-number">2</span> Data</h2>
 <ul>
-<li>Many combinations of <strong>population distribution</strong> and <strong>test statistic</strong> have <em>mathematically-derived</em> sampling distributions
+<li><code>ICU</code> data from the <strong>Stat2Data</strong> package
 <ul>
-<li>For example, with a <strong>normally distributed</strong> population (<span class="math inline">\mathcal{N}(\mu, \sigma^2)</span>), the sampling distribution of the <strong>mean</strong> is <span class="math inline">\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})</span>
-<ul>
-<li>In this case, the <em>population</em> distribution and <em>sampling</em> distribution are the <strong>same distribution</strong>: Normal</li>
-<li>The variance (or standard deviation) of the sampling distribution <strong>decreases</strong> as <span class="math inline">n</span> increases: A <em>larger sample</em> leads to a smaller, <em>more precise standard error</em></li>
-</ul></li>
-</ul></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>There is not a mathematically-derived sampling distribution for every population distribution and test statistic
-<ul>
-<li>If you’re dealing with <em>unknown or unusual distributions or test statistics</em>, your only option may be <em>computational methods</em></li>
-</ul></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="computationally-derived-sampling-distribution" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="computationally-derived-sampling-distribution"><span class="header-section-number">3</span> Computationally-derived sampling distribution</h2>
-<section id="getting-started" class="level3" data-number="3.1">
-<h3 data-number="3.1" class="anchored" data-anchor-id="getting-started"><span class="header-section-number">3.1</span> Getting started</h3>
-<ul>
-<li>Set a <strong>random number seed</strong>
-<ul>
-<li>If you don’t do this, every time you run the code, you’ll get different numbers</li>
-<li>Setting a random seed makes your simulation <em>replicable</em></li>
-<li>Note that you want <code>set.seed()</code> to appear in <strong>every code chunk</strong> that creates random numbers</li>
-</ul></li>
-<li>Load (and install, if needed) the <a href="https://infer.tidymodels.org/"><strong>infer</strong> package</a>
-<ul>
-<li><strong>infer</strong> has a function that we’ll use to <em>repeatedly sample</em></li>
-<li>There are other ways to do this, but this is very simple and works well</li>
-<li>You can install a new package a few different ways
-<ul>
-<li>Via the Console: <code>install.packages(&quot;infer&quot;)</code></li>
-<li>Via the “Packages” pane (bottom right): Click “Install” button, type in the package name, and click “Install”</li>
-</ul></li>
-</ul></li>
-<li>Install only <strong>once</strong>, load or library <strong>once per document</strong></li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(infer)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="standard-normal-population-population-sim-mathcaln0-1" class="level3" data-number="3.2">
-<h3 data-number="3.2" class="anchored" data-anchor-id="standard-normal-population-population-sim-mathcaln0-1"><span class="header-section-number">3.2</span> Standard Normal population: <span class="math inline">population \sim \mathcal{N}(0, 1)</span></h3>
-<section id="create-a-population" class="level4" data-number="3.2.1">
-<h4 data-number="3.2.1" class="anchored" data-anchor-id="create-a-population"><span class="header-section-number">3.2.1</span> Create a population</h4>
-<ul>
-<li><code>rnorm()</code> creates a random variable that follows a <strong>normal</strong> distribution
-<ul>
-<li>First argument = Number of observations (population size)</li>
-<li>Second argument = <span class="math inline">\mu</span></li>
-<li>Third argument = <span class="math inline">\sigma</span> (not <span class="math inline">\sigma^2</span>)</li>
-</ul></li>
-<li>Create a very large population (N = 1,000,000) with a specified mean and variance
-<ul>
-<li>Confirm that the mean and SD are what you think they should be</li>
-</ul></li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>norm_pop <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000000</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(norm_pop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0002941277</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(norm_pop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.001315</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(norm_pop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.002632</code></pre>
-</div>
-</div>
-</section>
-<section id="sample-from-the-population" class="level4" data-number="3.2.2">
-<h4 data-number="3.2.2" class="anchored" data-anchor-id="sample-from-the-population"><span class="header-section-number">3.2.2</span> Sample from the population</h4>
-<ul>
-<li>Small sample: <span class="math inline">n</span> = 10
-<ul>
-<li><code>rep_sample_n()</code> repeatedly samples from the dataset
-<ul>
-<li>Piped (<code>%&gt;%</code>) from the <code>norm_pop</code> dataset, so it resamples from that</li>
-<li><code>size = 10</code>: Sample size for each sample</li>
-<li><code>reps = 10000</code>: Number of repeated samples (could be larger but this is good enough to show how things work and doesn’t take too long to run)</li>
-<li><code>replace = TRUE</code>: Sample with replacement, so observations go back in after each sample and can be sampled again in the next sample</li>
-</ul></li>
-<li><code>summarise(x_bar = mean(norm_pop))</code>: Create a data frame with <strong>each of the means</strong> from <strong>each sample</strong>
-<ul>
-<li>There are 10,000 samples, so there will be 10,000 means in this</li>
-</ul></li>
-<li>The <code>ggplot()</code> code creates a histogram from the data
-<ul>
-<li>Modification: <code>bins = 50</code> increases the bins to make it a little smoother</li>
-<li>Modification: <code>xlim(-1.5, 1.5)</code> sets limits on the x-axis to make the plots more comparable
-<ul>
-<li>I had to run the plots first without this to see how far I needed to let the X axis go. So for later plots here, run without, look at it, then add this with appropriate numbers to put them all on the same scale</li>
-</ul></li>
-<li>Make similar modifications in your own plots later in this document</li>
-<li>We’ll spend the next 2 weeks on <code>ggplot()</code> so you’ll learn all of this (and more!)</li>
-</ul></li>
-</ul></li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>norm_means10 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(norm_pop) <span class="sc">%&gt;%</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">10</span>, </span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">reps =</span> <span class="dv">10000</span>, </span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_bar =</span> <span class="fu">mean</span>(norm_pop))</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> norm_means10, <span class="fu">aes</span>(<span class="at">x =</span> x_bar)) <span class="sc">+</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
-(`geom_bar()`).</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img role="img" src="data:image/png;base64,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" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>Moderate sample: <span class="math inline">n</span> = 50</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>norm_means50 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(norm_pop) <span class="sc">%&gt;%</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">50</span>, </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">reps =</span> <span class="dv">10000</span>, </span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_bar =</span> <span class="fu">mean</span>(norm_pop))</span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> norm_means50, <span class="fu">aes</span>(<span class="at">x =</span> x_bar)) <span class="sc">+</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
-(`geom_bar()`).</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img role="img" src="data:image/png;base64,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0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZBXJkoDSIqBkFcmSgNIioGQVyZKA0iKgZG2QpWe7nz+//dPZ95+fx+/jr1cvuruaAkqDgJL17rP045PDgL76bHfpg2/XLbq3mgJKg4CS9c6z9PLT3UFAX326u/azv61ZdH81BZQGASXrXWdp38+DgD7d7d774vnrs2+e7HYfrll0fzUFlAYBJesdZ+m7J7vDgJ5/nN99dfHTi/NG/mH5ogerKaA0CChZ7zRLL39/+Tn8JqDPbvcoz/cyP1m+6MFqCigNAkrWu8zSi33mfvPdbUDPfne9a3lzbGnZooerKaA0CChZ7zigH3y7/+91A199entQ6OrnZYserqaA0iCgZL3TgL7/5evXhwE93J8838/cf725bNHD1RRQGgSUrHefpYOAvjg8qP704oP6skU3a3fona8p5QkoWQJKYQJKVr+APrs4wL5s0c3aCShvIqBkbRrQOzW8/MOyRTdrJ6C8iYCSNfYe6O1qCigNAkrW2N+B3q6mgNIgoGQJKIUJKFmPZem/fvjhP+8tOvvHf/yvN/wL54HSjYCS9UiW9jeau3dp0P7Ky+bllldciUQ3AkrW+oA2Ft3x4s618Df7k7cXvi9Y9HA1BZQGASVrfUD3N59bGFB3Y2JbAkrWT2Xp73++8B/ntXzv3/584D8+++n7xl944X6g9CKgZP1Ull7s3qR92/ibf3nnjvS73zx/ffan3eHt5xcsur+aAkqDgJL1k1l6+qaAts40uvbCM5HoZZuAqipL/WSWfnzy0/1sfk157U5AX798+LzNZYvuraaA0iCgZP10lr777bl/2n8H+svf3vrXP//5L284h+n1/YBePfH9oy9XL7q7mgJKg4CStf4ofISA0iKgZAkohQkoWY9k6ezvj35k70JAaRFQsopkSUBpEVCyimRJQGkRULKKZElAaRFQsh7P0tk3nz84JbT7cSUBnV7HVgooSz2ape9aJ9QLKL0JKAN6LEvta+IFlN4ElAEtOA907/2P7vhYQOlMQBnQI1l6dnGB+l/7rMsbCOj0BJQBvTlL+8d3vPH5Hb0I6PQElAG9OUsXn+DfdO+6XgR0egLKgB4P6AiXwgsoAsqABJQaBJQBPf4daPshRZ0J6PQElAEtOArvO1AGIKAMaMF5oI7CMwABZUBLrkR64yOQ+hDQ6QkoA1p0LXz+THoBnZ6AMqDH70j/zZOH13K6lJPeBJQBLbwW3s1ECBNQBiSg1CCgDEhAqUFAGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGZDTmKhBQBmQgFKDgDIgAaUGAWVAjwX088N7iFzcVuSDf/vzn//S+xahAjo9AWVAK7P0j88yz/gQ0OkJKANanaWnkYIK6PQElAGtztL+OXP9H/IhoNMTUAa0PkuRh3wI6PQElAGtz9KPTwK7oAI6PQFlQOuztD+zyWlM9CagDEhAqUFAGdBx34EKKL0JKAM66ii870DpTkAZ0Nosvdz301F4uhNQBrTqUs6PPgpdCi+gCCgDOupmIt13QAUUAWVAxwS0fz8FFAFlQKsD+v4X/9lnze4Q0OkJKAMqkiUBnZ6AMqAiWRLQ6QkoAyqSJQGdnoAyoCJZEtDpCSgDWpylH374IXH06IqATk9AGdCiLH3/+ZPLQ/Dv/fLrrVeoTUCnJ6AMaEGWvntyeBrTe19uv1IPCej0BJQBPZqlsz/ePxP0190f6CGgCCgjejRLT6/On//lb397/UH+wx4rdpeATk9AGdBjWXpx8bH9i6udzrNvLhr61eardZ+ATk9AGdCSSzl/9u3tgpefuhsTCQLKgB7J0n4H9O5j4PfPlOu/Cyqg0xNQBvRIlp4+vPnSs8S3oAI6PQFlQG/O0v75HXd3QD3WmAwBZUBvzlLrCZyeykmCgDIgAaUGAWVAjwe09RFeQOlNQBnQ49+B3j/kvj8w7ztQehNQBvRIlp49qOVFUz3WmN4ElAE9kqWLsz7vnLT09MGZoT0I6PQElAE9lqWLS+F/dXMp0svfZS6GF9DpCSgDeixLV4/l/Phf//LDD3//988v/tD/Sk4BRUAZ0KNZ+vHO3UB3kQ/wAoqAMqLHs/Tys7v9/Pm3j/6Td09ApyegDGhJlr4/SOjHf918lVoEdHoCyoAWZukff/6X3/72n/+cqedrAUVAGVGRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBLTqI9D+vT/z88cl7v/7PLVfnpwjo9ASUAT2epf1j4a/vJ7K/NL7/hfCvBRQBZUSPZumPh9duPvVYY0IElAE9lqVnlyfPX96Q6eyPl5cl9d8HFdDpCSgDWnI3pt3B957fP3E3JhIElAEtuB/o3Vxe3F3E/UDpTUAZ0II70jcea+yO9PQmoAzIM5GoQUAZkKdyUoOAMiABpQYBZUCeykkNAsqAVj+V8+Jk+u6n0gvo9ASUAS05D/TOYfiHJzb1IKDTE1AGtOipnB/cPpXz957KSYSAMqCFT+XcffTbc5cP5fRUTgIElAE9mqWXn95/KucHgafKCej0BJQBPZ6lsz/e7eevex+B3xPQ6QkoA1qSpbN///y6nu9/kcingCKgjGhpls5+OJeJ556ATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCej0BJQBFcmSgE5PQBlQkSwJ6PQElAEVyZKATk9AGVCRLAno9ASUARXJkoBOT0AZUJEsCehE0qlsS0+FIRXJkoBOJJ3KtvRUGFKRLAnoRNKpbEtPhSEVyZKATiSdyrb0VBhSkSwJ6ETSqVwjPSvCimRJQCeSjuIa6VkRViRLAjqRdBTXSM+KsK2z9Gx3470/XC07+/7z8z9+/PXz25c1Ft1dTQGdRzqKa6RnRdjGWTr73cOAvvrsasEH316/rLHo3moK6DzSUVwjPSvCNs7Sq08fBPRg0c/+9uBV14vur6aAziMdxTXSsyJs4yz9+ORBEp+ep/SL56/Pvnmy2334k4vur6aAziMdxTXSsyJs4yy9eFDE86Tuvrr+u8ud0sai+wR0IukorpGeFWEbZ+nZbvfJgyXXSX169ZeNRfcJ6ETSUVwjPSvCNs7S0+t9y2v7o0rXS873PH/+vLnoAQGdSDqKa6RnRdi2WXr16f2vQA+XXP3cWPSAgE4kHcU10rMibNss7Xco/993v9jt3vvVt7dLrncxz3c99994NhY9XE0BnUc6imukZ0XYtll6sdu9f32K5yfXS26PKl1+wG8sulm7Q5uuKeNIR3GN9KwI2zZLzw4DeFFQAeUx6SiukZ4VYdtm6en++sy/7q/U3O+H7st4p5aXx+gbi27WTkAnlI7iGulZEbZplvbH1z+5/XH/TeedQF7+obHoZu0EdELpKK6RnhVh3bL045OLw0Pr9kBvCOhE0lFcIz0rwrpl6epsz3Xfgd4Q0Imko7hGelaE9cvS04e7mwJKQzqKa6RnRVi/LF1+OHceKI9JR3GN9KwI67oH+pUrkXhcOoprpGdF2KZZOvxwfrVvebiLeXst/P1FD1dTQOeRjuIa6VkRtmmWDu8G+uLyNCZ3Y+Ix6SiukZ4VYZufB3qVxv09Pz+5/sH9QHmDdBTXSM+KsM2vhd99sL8SaX+v+avP5vurk37z/PXZn3aHd6S/v+j+agroPNJRXCM9K8K2vx/otZtnynkmEm+UjuIa6VkR1u2xxrfP23z58BGcjUX3VlNA55GO4hrpWRG2eZZe/v4X+zuKfH2w6PIh8B99+eC58HcW3SGgE0lHcY30rAgrkiUBnUg6imukZ0VYkSwJ6ETSUVwjPSvCimRJQCeSjuIa6VkRViRLAjqRdBTXSM+KsCJZEtCJpKO4RnpWhBXJkoBOJB3FNdKzIqxIlgR0IukorpGeFWFFsiSgE0lHcY30rAgrkiUBnUg6imukZ0VYkSwJ6ETSUVwjPSvCimRJQCeSjuIa6VkRViRLAjqRdBTXSM+KsCJZEtCJpKO4RnpWhBXJkoBOJB3FNdKzIqxIlgR0IukorpGeFWFFsiSgE0lHcY30rAgrkiUBnUg6imukZ0VYkSwJ6ETSUVwjPSvCimRJQCeSjuIa6VkRViRLAjqRdBTXSM+KsCJZEtCJpKO4RnpWhBXJkoBOJB3FNdKzIqxIlgR0IukorpGeFWFFsiSgE0lHcY30rAgrkiUBnUg6imukZ0VYkSwJ6ETSUVwjPSvCimRJQCeSjuIa6VkRViRLAjqRdBTXSM+KsCJZEtCJpKO4RnpWhBXJkoBOJB3FNdKzIqxIlgR0IukorpGeFWFFsiSgE0lHcY30rAgrkiUBnUg6imukZ0VYkSwJ6ETSUVwjPSvCimRJQCeSjuIa6VkRViRLAjqRdBTXSM+KsCJZEtCJpKO4RnpWhBXJkoBOJB3FNdKzIqxIlgR0IukorpGeFWFFsiSgE0lHcY30rAgrkiUBnUg6imukZ0VYkSwJ6ETSUVwjPSvCimRJQCeSjuIa6VkRViRLAjqRdBTXSM+KsCJZEtCJpKO4RnpWhBXJkoBOJB3FNdKzIqxIlgR0IukorpGeFWFFsiSgE0lHcY30rAgrkiUBnUg6imukZ0VYkSwJ6ETSUVwjPSvCimRJQCeSjuIa6VkRViRLAjqRdBTXSM+KsCJZEtCJpKO4RnpWhBXJkoBOJB3FNdKzIqxIlgR0IukorpGeFWFFsiSgE0lHcY30rAgrkiUBnUg6imukZ0VYkSwJ6ETSUVwjPSvCimRJQCeSjuIa6VkRViRLAjqRdBTXSM+KsCJZEtCJpKO4RnpWhBXJkoBOJB3FNdKzIqxIlgR0IukorpGeFWFFsiSgE0lHcY30rAgrkiUBnUg6imukZ0VYkSwJ6ETSUVwjPSvCimRJQCeSjuIa6VkRViRLAjqRdBTXSM+KsCJZEtCJpKO4RnpWhBXJkoBOJB3FNdKzIqxIlgR0IukorpGeFWFFsiSgE0lHcY30rAgrkiUBnUg6imukZ0VYkSwJ6ETSUVwjPSvCimRJQCeSjuIa6VkRViRLAjqRdBTXSM+KsCJZEtCJpKO4RnpWhBXJkoBOJB3FNdKzIqxIlgR0IukorpGeFWFFsiSgE0lHcY30rAgrkiUBnUg6imukZ0VYkSwJ6ETSUVwjPSvCimRJQCeSjuIa6VkRViRLAjqRdBTXSM+KsCJZEtCJpKO4RnpWhBXJkoBOJB3FNdKzIqxIlgR0IukorpGeFWFFsiSgE0lHcY30rAgrkiUBPU3p/m0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+mBapK0AAAzZSURBVCmSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUbSM9VfopkiUBPU3p1G0jPVX6KZIlAT1N6dRtIz1V+imSJQE9TenUdZQeNZsokiUBPU3pqnWUHjWbKJIlAT1N6ap1lB41myiSJQE9TemqdZQeNZsokiUBPU3pqnWUHjWbKJIlAT1N6ap1lB41myiSJQGtLt2vuPQbwCaKZElAq0v3Ky79BrCJIlkS0OrS/YpLvwFsokiWBLS6dL/i0m8AmyiSJQGtLt2vuPQbwCaKZElAq0v3Ky79BrCJIlkS0OrS/YpLvwFsokiWBLS6dL/i0m8AmyiSJQGtLt2vuPQbwCaKZElAq0v3Ky79BrCJIlkS0OrS/YpLvwFsokiWBLS6dL/i0m8AmyiSJQGtLt2vuPQbwCaKZElAq0v3Ky79BrCJIlkS0OrS/YpLvwFsokiWBLS6dL/i0m8AmyiSJQGtLt2vuPQbwCaKZElAq0v3Ky79BrCJIlkS0OrS/YpLvwFsokiWBLS6dL/i0m8AmyiSJQGtLt2vuPQbwCaKZElAq0v3Ky79BrCJIlkS0ELSqRpT+l1hE0WyJKCFpFM1pvS7wiaKZElAC0mnakzpd4VNFMmSgBaSTtWY0u8KmyiSJQEtJJ2qMaXfFTZRJEsCWkg6VWNKvytsokiWBLSQdKrGlH5X2ESRLAloIelUVZJ+r3hLRbIkoIWko1RJ+r3iLRXJkoAWko5SJen3irdUJEsCWkg6SpWk3yve0iBZOvv+8/NEfvz185/4ewEtJB2lStLvFW9pjCy9+mx36YNv2y8Q0ELSUaok/V7xlobI0qtPd9d+9rfmKwS0kHSUKkm/V7ylIbL0dLd774vnr8++ebLbfdh8hYAWko5SJen3irc0QpZ+PO/mVxc/vTgv6R9aLxHQQtJRqiT9XvGWRsjSs9v9zvN90U9aLxHQQtJRqiT9XvGWBsjS2e+ud0AvdkZ/3joSL6CFpKNUSfq94i0NkKVXn94eOjr8+ZCADimdn/rS7yBvaYAsHe51nu+NNr8EFdAhpfNzotJvK8sNkKUXh4fen95+nH992c0bgVXjzdKlOVHpt5XlBsiSgJaVLg3pLWB6A2TpTkCf3TkML6DAwAbI0p1mCihQxgBZesMe6A0BBcYzQJbe8B3oDQEFxjNAlgQUqGmALDkPFKhpgCy5EgmoaYAsHe51uhYeqGOELLkbE1DSCFlyP1CgpCGydL7fufvN89dnf9q5Iz1QxxBZ8kwkoKIxsvTSUzmBegbJ0uVz4T/60nPhgTqKZElAgfEUyZKAAuMpkiUBBcZTJEsCCoynSJYEFBhPkSwJKDCeIlkSUGA8RbIkoMB4imRJQIHxFMmSgALjKZIlAQXGUyRLAgqMp0iWBBQYT5EsCSgwniJZElBgPEWyJKDAeIpkSUCB8RTJkoAC4ymSJQEFxlMkSwIKjKdIlnYAUc0y9U7hcdKjA2bXLFPvFB4nPTpgds0y9U7hcdKjA2bXLFPvFPITfuod4l0w3S1NPN1Zf+/xTLwRdmC6W5p4urP+3uOZeCPswHS3NPF0Z/29xzPxRtiB6W5p4unO+nuPZ+KNsAPT3dLE05319x7PxBthB6a7pYmnO+vvPZ6JN8IOTHdLE0931t97PBNvhB2Y7pYmnu6sv/d4Jt4IOzDdLU083Vl/b4C3JqAARxJQgCMJKMCRBBTgSAIKcCQBBTiSgAIcSUABjiSgAEcSUIAjCehonu1+/jy9Difm7PvPd7vdx1+b62am3WoFdDA/Ppl1U9zMq8+unqr4wbfpVTlV8261AjqWl5/uZt0Ut/Lq05vn0v7sb+mVOU0Tb7UCOpT9ljjrpriVp7vde188f332zZPd7sP0ypykmbdaAR3Jd092826KGzn/dLn76uKnF+cl/UN4bU7R1FutgI7j5e8vP2hOuilu5Nntfuf5vugn0XU5RZNvtQI6jBf7zfA33027KW7j7HfXO6AzH+rYzuxbrYAO48XFYeIX026K23j16e2ho8OfeTdm32oFdBgv3v/y9euJN8VtHO51nu+N+hL0HZt9qxXQwcy7KW7jxeGh96e3H+d5l+bdagV0MPNuitsQ0B7m3WoFdDDzborbuBPQZw7Db2PerVZABzPvpriNO80U0I3Mu9UK6GDm3RS3YQ+0h3m3WgEdzLyb4jZ8B9rDvFutgAbd3Obi4OzEeTfFbQhoD/NutQIaJKDbcx5oD/NutQIaJKDbcyVSD/NutQI6mHk3xW0c7nW6Fn4r8261AjqYeTfFjbgbUwfzbrUCOph5N8WNuB9oB/NutQI6mHk3xa083d9v7fnrsz/t3JF+K/NutQI6mHk3xa14JtL25t1qBXQw826Km3npqZxbm3erFdDBzLspbufyufAffWmuW5l3qxVQgCMJKMCRBBTgSAIKcCQBBTiSgAIcSUABjiSgAEcSUIAjCSjAkQQU4EgCCnAkAQU4koACHElAAY4koABHElCAIwkowJEElFO3f6rcpA+cYGsCyqkTUDYjoJw6AWUzAsqpE1A2I6CcOgFlMwLKqRNQNiOgnDoBZTMCyqm7CujZN7/Y7d771V/v/uXLf/noye58+cdf3Evsj5/tdr/6tt9aUpKAUs3Z73aHu5T7Pu4+ecPrLwP6476Tex8cVPH7z3a3fn31vzx/5Xt/eHGx6L2vNvodOBECSjkXLbxJ5tPdI5/QLwL6f5/chPK2is92d3x4879/7/98evnSP2z2S3ASBJR6nh207dmjndsH9P0nB6G8fvmL3T2XZd0H9BeXC3x1ypsJKAXd7nVe7I2++YP2q6u9yS/P/8E/Prvt4uXyiy9Fz/7x+e0u6OWH/fNP+md/fNM3AyCglHTzvefF96EfLnjxzc7ks5tdzRe7w/bul//sb/ufLgJ6+SO8mYBS0YurT+LPFrTuIqC3L3p6ndynd9q7T/FBQB09YgkBpaTLD/GLWncR0K/u/PGylH//3//94MvTp7uDgDp6xCICSkkXVfzNgg/wh8W89LTdxzsBdfSIRQSUmq4PoT/+ZeX9K5GePdxrPfvHN5/d+Q5UQFlEQCnq2dIzNfcBPdxNfXF4Ful//f1f/umj3Z0Y7wP66G4t7AkoRV0cgH/jJUhX9gE9fNltQM++Ozw9dCegrCWgVPV0RUCbe6CvPtvtBJS3IaAU9eJtP8Jf7sJeeP+X//qfdw4iCSiLCCg1XV1ftOBwz08dRLr4EvX9f/7LD5eLBZT1BJSa9h/gP/hsyYf4e6cx7Xc89/utFwX+8s5iAWUlAaWky3uILDrn/d6J9NdnKd3r5O3/SkBZTECp6PoSpGcLPsRfBPT2RddXcN7t5NnTnYCymoBS0M09RC5+eORD/OW3pR9eFvTsj9eh3Hfy5pP9y9/tBJT1BJSC7t06adHt7D74+vn1Leg/vFl8cY+71//4/W4noBxBQKnnsJqP349pX8r/dnvK0s3H+Xv3o99d/z8FlMUElHIu9h2vE/f4HUEvzgP98faaow/+dvAvb6v6zfWXAQLKYgJKOXefgvToh/jLE+lvCvqrm395UND3vrztpoCymIBSzfXNlK899iH+6kqksz/uT1S6+6Tif/x+//Cj93/19euDE0EFlMUEFOBIAgpwJAEFOJKAAhxJQAGOJKCchMZZ8ZcW3HEZjiWgnAQBJUFAOQkCSoKAchIElAQBBTiSgAIcSUABjiSgAEcSUIAjCSjAkQQU4EgCCnAkAQU4koACHElAAY4koABHElCAIwkowJEEFOBIAgpwJAEFOJKAAhxJQAGOJKAARxJQgCP9f6RWBUFFwdUhAAAAAElFTkSuQmCC" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>Large sample: <span class="math inline">n</span> = 100</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>norm_means100 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(norm_pop) <span class="sc">%&gt;%</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">100</span>, </span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">reps =</span> <span class="dv">10000</span>, </span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_bar =</span> <span class="fu">mean</span>(norm_pop))</span>
-<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> norm_means100, <span class="fu">aes</span>(<span class="at">x =</span> x_bar)) <span class="sc">+</span></span>
-<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
-<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values or values outside the scale range
-(`geom_bar()`).</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img role="img" src="data:image/png;base64,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" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="compare-estimates" class="level4" data-number="3.2.3">
-<h4 data-number="3.2.3" class="anchored" data-anchor-id="compare-estimates"><span class="header-section-number">3.2.3</span> Compare estimates</h4>
-<ul>
-<li>Compare means for each sample size</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(norm_means10<span class="sc">$</span>x_bar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.00227558</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(norm_means50<span class="sc">$</span>x_bar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.0004012415</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(norm_means100<span class="sc">$</span>x_bar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.0004763965</code></pre>
-</div>
-</div>
-<ul>
-<li>Compare standard deviations for each sample size</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(norm_means10<span class="sc">$</span>x_bar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.3193777</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(norm_means50<span class="sc">$</span>x_bar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1416207</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(norm_means100<span class="sc">$</span>x_bar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1006246</code></pre>
-</div>
-</div>
-<ul>
-<li>Compare variances for each sample size</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(norm_means10<span class="sc">$</span>x_bar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.1020021</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(norm_means50<span class="sc">$</span>x_bar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.02005642</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(norm_means100<span class="sc">$</span>x_bar)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.01012531</code></pre>
-</div>
-</div>
-<ul>
-<li>How does each value correspond to what you’d expect based on the mathematically-derived sampling distribution?
-<ul>
-<li><span class="math inline">\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})</span></li>
+<li><code>ID</code>: Patient ID code</li>
+<li><code>Survive</code>: 1 = patient survived to discharge or 0 = patient died</li>
+<li><code>Age</code>: Age (in years)</li>
+<li><code>AgeGroup</code>: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)</li>
+<li><code>Sex</code>: 1 = female or 0 = male</li>
+<li><code>Infection</code>: 1 = infection suspected or 0 = no infection</li>
+<li><code>SysBP</code>: Systolic blood pressure (in mm of Hg)</li>
+<li><code>Pulse</code>: Heart rate (beats per minute)</li>
+<li><code>Emergency</code>: 1 = emergency admission or 0 = elective admission</li>
 </ul></li>
 </ul>
 </section>
-</section>
-<section id="bernoulli-population-population-sim-b0.3" class="level3" data-number="3.3">
-<h3 data-number="3.3" class="anchored" data-anchor-id="bernoulli-population-population-sim-b0.3"><span class="header-section-number">3.3</span> Bernoulli population: <span class="math inline">population \sim B(0.3)</span></h3>
-<section id="create-a-population-1" class="level4" data-number="3.3.1">
-<h4 data-number="3.3.1" class="anchored" data-anchor-id="create-a-population-1"><span class="header-section-number">3.3.1</span> Create a population</h4>
+<section id="tasks" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="tasks"><span class="header-section-number">3</span> Tasks</h2>
+<ol type="1">
+<li><p><strong>Does blood pressure differ between those with a suspected infection and those without?</strong> <em>Fit a linear regression to answer this question.</em></p></li>
+<li><p>Write up the <strong>interpretation</strong> of the model, including:</p></li>
+</ol>
 <ul>
-<li><code>rbinom()</code> creates a random variable that follows a <strong>binomial</strong> distribution
-<ul>
-<li>First argument = Number of observations (population size)</li>
-<li>Second argument = number of trials (here, just 1 for a <strong>Bernoulli</strong> trial)</li>
-<li>Third argument = <span class="math inline">p</span> (probability of success)</li>
-</ul></li>
-<li>Create a very large population (N = 1,000,000) with a specified mean and variance
-<ul>
-<li>Confirm that the mean and SD are what you think they should be</li>
-</ul></li>
+<li>Intercept value, test statistic, <span class="math inline">p</span>-value</li>
+<li>Intercept interpretation (in words)</li>
+<li>Slope value, test statistic, <span class="math inline">p</span>-value</li>
+<li>Slope interpretation (in words)</li>
+<li><span class="math inline">R^2</span> value, test statistic, <span class="math inline">p</span>-value</li>
+<li><span class="math inline">R^2</span> interpretation (in words)</li>
 </ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>bern_pop <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1000000</span>, <span class="dv">1</span>, <span class="fl">0.3</span>)</span>
-<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bern_pop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.300176</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(bern_pop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.4583346</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(bern_pop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0.2100706</code></pre>
-</div>
-</div>
-</section>
-<section id="sample-from-the-population-1" class="level4" data-number="3.3.2">
-<h4 data-number="3.3.2" class="anchored" data-anchor-id="sample-from-the-population-1"><span class="header-section-number">3.3.2</span> Sample from the population</h4>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
+<ol start="3" type="1">
+<li><p>What is the <strong>predicted blood pressure</strong> for someone <em>with a suspected infection</em>? What is the <strong>predicted blood pressure</strong> for someone <em>without a suspected infection</em>?</p></li>
+<li><p>Calculate the <strong>predicted</strong> and <strong>residual</strong> values for each person and add them to the original dataset. <strong>Does it looks like the assumptions are satisfied?</strong> Make plots to help you decide:</p></li>
+</ol>
 <ul>
-<li>Remember to adjust the X axis using <code>xlim()</code> (as in the Normal section) to have the same range for each plot.</li>
-<li>You’ll need to make each plot, see what they look like, and then adjust the X axis accordingly.</li>
+<li>Residual vs predictor</li>
+<li>Q-Q plot of residuals</li>
+<li>Histogram of residuals (all together and separately for the two groups)</li>
 </ul>
-</div>
-</div>
-<ul>
-<li>Small sample: <span class="math inline">n</span> = 10</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>bern_means10 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(bern_pop) <span class="sc">%&gt;%</span></span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">10</span>, </span>
-<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">reps =</span> <span class="dv">10000</span>, </span>
-<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_bar =</span> <span class="fu">mean</span>(bern_pop))</span>
-<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> bern_means10, <span class="fu">aes</span>(<span class="at">x =</span> x_bar)) <span class="sc">+</span></span>
-<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img role="img" src="data:image/png;base64,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" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>Moderate sample: <span class="math inline">n</span> = 50</li>
-</ul>
-<ul>
-<li>Large sample: <span class="math inline">n</span> = 100</li>
-</ul>
-</section>
-<section id="compare-estimates-1" class="level4" data-number="3.3.3">
-<h4 data-number="3.3.3" class="anchored" data-anchor-id="compare-estimates-1"><span class="header-section-number">3.3.3</span> Compare estimates</h4>
-<ul>
-<li>Compare means for each sample size</li>
-</ul>
-<ul>
-<li>Compare standard deviations for each sample size</li>
-</ul>
-<ul>
-<li>Compare variances for each sample size</li>
-</ul>
-<ul>
-<li>How does each value correspond to what you’d expect based on the mathematically-derived sampling distribution <strong>for a normally distributed population</strong>?
-<ul>
-<li><span class="math inline">\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})</span></li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="poisson-population-population-sim-poisson1.5" class="level3" data-number="3.4">
-<h3 data-number="3.4" class="anchored" data-anchor-id="poisson-population-population-sim-poisson1.5"><span class="header-section-number">3.4</span> Poisson population: <span class="math inline">population \sim Poisson(1.5)</span></h3>
-<section id="create-a-population-2" class="level4" data-number="3.4.1">
-<h4 data-number="3.4.1" class="anchored" data-anchor-id="create-a-population-2"><span class="header-section-number">3.4.1</span> Create a population</h4>
-<ul>
-<li><code>rpois()</code> creates a random variable that follows a <strong>Poisson</strong> distribution
-<ul>
-<li>First argument = Number of observations (population size)</li>
-<li>Second argument = <span class="math inline">\lambda</span> (mean and variance)
-<ul>
-<li>Remember that <span class="math inline">\lambda</span> is the variance, but we’re going to look at the <strong>standard deviation</strong> which is the <em>square root</em> of the variance</li>
-</ul></li>
-</ul></li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>pois_pop <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1000000</span>, <span class="fl">1.5</span>)</span>
-<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(pois_pop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.500464</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(pois_pop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.226379</code></pre>
-</div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(pois_pop)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1.504005</code></pre>
-</div>
-</div>
-</section>
-<section id="sample-from-the-population-2" class="level4" data-number="3.4.2">
-<h4 data-number="3.4.2" class="anchored" data-anchor-id="sample-from-the-population-2"><span class="header-section-number">3.4.2</span> Sample from the population</h4>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Remember to adjust the X axis using <code>xlim()</code> (as in the Normal section) to have the same range for each plot.</li>
-<li>You’ll need to make each plot, see what they look like, and then adjust the X axis accordingly.</li>
-</ul>
-</div>
-</div>
-<ul>
-<li>Small sample: <span class="math inline">n</span> = 10</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>pois_means10 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(pois_pop) <span class="sc">%&gt;%</span></span>
-<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">10</span>, </span>
-<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">reps =</span> <span class="dv">10000</span>, </span>
-<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>               <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_bar =</span> <span class="fu">mean</span>(pois_pop))</span>
-<span id="cb48-8"><a href="#cb48-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb48-9"><a href="#cb48-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pois_means10, <span class="fu">aes</span>(<span class="at">x =</span> x_bar)) <span class="sc">+</span></span>
-<span id="cb48-10"><a href="#cb48-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img role="img" src="data:image/png;base64,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" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
-<ul>
-<li>Moderate sample: <span class="math inline">n</span> = 50</li>
-</ul>
-<ul>
-<li>Large sample: <span class="math inline">n</span> = 100</li>
-</ul>
-</section>
-<section id="compare-estimates-2" class="level4" data-number="3.4.3">
-<h4 data-number="3.4.3" class="anchored" data-anchor-id="compare-estimates-2"><span class="header-section-number">3.4.3</span> Compare estimates</h4>
-<ul>
-<li>Compare means for each sample size</li>
-</ul>
-<ul>
-<li>Compare standard deviations for each sample size</li>
-</ul>
-<ul>
-<li>Compare variances for each sample size</li>
-</ul>
-<ul>
-<li>How does each value correspond to what you’d expect based on the mathematically-derived sampling distribution <strong>for a normally distributed population</strong>?
-<ul>
-<li><span class="math inline">\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})</span></li>
-</ul></li>
-</ul>
-</section>
-</section>
-</section>
-<section id="summarize-results" class="level2" data-number="4">
-<h2 data-number="4" class="anchored" data-anchor-id="summarize-results"><span class="header-section-number">4</span> Summarize results</h2>
-<ul>
-<li>In general, how does <strong>sample size</strong> impact the <strong>standard error</strong>?
-<ul>
-<li>i.e., the standard deviation of the sampling distribution?</li>
-<li>Do larger samples lead to smaller or larger standard errors?</li>
-</ul></li>
-<li>In general, how does the <strong>population distribution</strong> impact the <strong>sampling distribution</strong>?
-<ul>
-<li>Based on: Visual inspection of the distribution</li>
-<li>Based on: Estimates of standard error</li>
-</ul></li>
-</ul>
+<ol start="5" type="1">
+<li><strong>Does blood pressure differ between those with a suspected infection and those without? How?</strong> (Brief, simple words, no jargon, no statistics.)</li>
+</ol>
+<p>Bonus. A linear regression with only 1 binary predictor (e.g., <code>Infection</code>) is <strong>exactly equivalent</strong> to a (independent samples) <span class="math inline">t</span>-test. (Notice that the test for the coefficient / slope in the regression <strong>is</strong> a <span class="math inline">t</span>-test – this is not a coincidence.) You just get slightly different pieces of information from the two analyses. Run the <span class="math inline">t</span>-test for this same analysis to see what is the same and what is different. This uses the <code>t.test()</code> function from the <strong>stats</strong> package (always loaded by default).</p>
+<p><code>t.test(ICU$SysBP ~ ICU$Infection, alternative = &quot;two.sided&quot;, var.equal = TRUE)</code></p>
 
 
 <!-- -->
@@ -5157,339 +4724,73 @@ Note
     }
   });
   </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb49" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;BTS 510 Lab 3&quot;</span></span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true</span></span>
-<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained-math: true</span></span>
-<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
-<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
-<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
-<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
-<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-bg: true</span></span>
-<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-border-left: &quot;#31BAE9&quot;</span></span>
-<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
-<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span>
-<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
-<span id="cb49-24"><a href="#cb49-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-25"><a href="#cb49-25" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Understand **probability** as a measure of **uncertainty**</span>
-<span id="cb49-26"><a href="#cb49-26" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Summarize** probabilities with *probability distributions* </span>
-<span id="cb49-27"><a href="#cb49-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Think about **uncertainty** in sampling</span>
-<span id="cb49-28"><a href="#cb49-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>**Summarize** uncertainty in sampling: **Sampling distribution**</span>
-<span id="cb49-29"><a href="#cb49-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-30"><a href="#cb49-30" aria-hidden="true" tabindex="-1"></a><span class="fu">## Mathematically-derived sampling distribution</span></span>
-<span id="cb49-31"><a href="#cb49-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-32"><a href="#cb49-32" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Many combinations of **population distribution** and **test statistic** have *mathematically-derived* sampling distributions</span>
-<span id="cb49-33"><a href="#cb49-33" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>For example, with a **normally distributed** population ($\mathcal{N}(\mu, \sigma^2)$), the sampling distribution of the **mean** is $\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$</span>
-<span id="cb49-34"><a href="#cb49-34" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>In this case, the *population* distribution and *sampling* distribution are the **same distribution**: Normal</span>
-<span id="cb49-35"><a href="#cb49-35" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>The variance (or standard deviation) of the sampling distribution **decreases** as $n$ increases: A *larger sample* leads to a smaller, *more precise standard error*</span>
-<span id="cb49-36"><a href="#cb49-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-37"><a href="#cb49-37" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb49-38"><a href="#cb49-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-39"><a href="#cb49-39" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>There is not a mathematically-derived sampling distribution for every population distribution and test statistic</span>
-<span id="cb49-40"><a href="#cb49-40" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>If you&#39;re dealing with *unknown or unusual distributions or test statistics*, your only option may be *computational methods*</span>
-<span id="cb49-41"><a href="#cb49-41" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb49-42"><a href="#cb49-42" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb49-43"><a href="#cb49-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-44"><a href="#cb49-44" aria-hidden="true" tabindex="-1"></a><span class="fu">## Computationally-derived sampling distribution</span></span>
-<span id="cb49-45"><a href="#cb49-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-46"><a href="#cb49-46" aria-hidden="true" tabindex="-1"></a><span class="fu">### Getting started</span></span>
-<span id="cb49-47"><a href="#cb49-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-48"><a href="#cb49-48" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Set a **random number seed**</span>
-<span id="cb49-49"><a href="#cb49-49" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>If you don&#39;t do this, every time you run the code, you&#39;ll get different numbers</span>
-<span id="cb49-50"><a href="#cb49-50" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Setting a random seed makes your simulation *replicable*</span>
-<span id="cb49-51"><a href="#cb49-51" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Note that you want <span class="in">`set.seed()`</span> to appear in **every code chunk** that creates random numbers</span>
-<span id="cb49-52"><a href="#cb49-52" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Load (and install, if needed) the <span class="co">[</span><span class="ot">**infer** package</span><span class="co">](https://infer.tidymodels.org/)</span></span>
-<span id="cb49-53"><a href="#cb49-53" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**infer** has a function that we&#39;ll use to *repeatedly sample* </span>
-<span id="cb49-54"><a href="#cb49-54" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>There are other ways to do this, but this is very simple and works well</span>
-<span id="cb49-55"><a href="#cb49-55" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>You can install a new package a few different ways</span>
-<span id="cb49-56"><a href="#cb49-56" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Via the Console: <span class="in">`install.packages(&quot;infer&quot;)`</span> </span>
-<span id="cb49-57"><a href="#cb49-57" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Via the &quot;Packages&quot; pane (bottom right): Click &quot;Install&quot; button, type in the package name, and click &quot;Install&quot;</span>
-<span id="cb49-58"><a href="#cb49-58" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Install only **once**, load or library **once per document**</span>
-<span id="cb49-59"><a href="#cb49-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-62"><a href="#cb49-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-63"><a href="#cb49-63" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb49-64"><a href="#cb49-64" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(infer)</span>
-<span id="cb49-65"><a href="#cb49-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-66"><a href="#cb49-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-67"><a href="#cb49-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-68"><a href="#cb49-68" aria-hidden="true" tabindex="-1"></a><span class="fu">### Standard Normal population: $population \sim \mathcal{N}(0, 1)$</span></span>
-<span id="cb49-69"><a href="#cb49-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-70"><a href="#cb49-70" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Create a population</span></span>
-<span id="cb49-71"><a href="#cb49-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-72"><a href="#cb49-72" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`rnorm()`</span> creates a random variable that follows a **normal** distribution </span>
-<span id="cb49-73"><a href="#cb49-73" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>First argument = Number of observations (population size)</span>
-<span id="cb49-74"><a href="#cb49-74" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Second argument = $\mu$</span>
-<span id="cb49-75"><a href="#cb49-75" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Third argument = $\sigma$ (not $\sigma^2$)</span>
-<span id="cb49-76"><a href="#cb49-76" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Create a very large population (N = 1,000,000) with a specified mean and variance</span>
-<span id="cb49-77"><a href="#cb49-77" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Confirm that the mean and SD are what you think they should be</span>
-<span id="cb49-78"><a href="#cb49-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-81"><a href="#cb49-81" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-82"><a href="#cb49-82" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb49-83"><a href="#cb49-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-84"><a href="#cb49-84" aria-hidden="true" tabindex="-1"></a>norm_pop <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">1000000</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span>
-<span id="cb49-85"><a href="#cb49-85" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(norm_pop)</span>
-<span id="cb49-86"><a href="#cb49-86" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(norm_pop)</span>
-<span id="cb49-87"><a href="#cb49-87" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(norm_pop)</span>
-<span id="cb49-88"><a href="#cb49-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-89"><a href="#cb49-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-90"><a href="#cb49-90" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Sample from the population</span></span>
-<span id="cb49-91"><a href="#cb49-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-92"><a href="#cb49-92" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Small sample: $n$ = 10</span>
-<span id="cb49-93"><a href="#cb49-93" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`rep_sample_n()`</span> repeatedly samples from the dataset</span>
-<span id="cb49-94"><a href="#cb49-94" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Piped (<span class="in">`%&gt;%`</span>) from the <span class="in">`norm_pop`</span> dataset, so it resamples from that</span>
-<span id="cb49-95"><a href="#cb49-95" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`size = 10`</span>: Sample size for each sample</span>
-<span id="cb49-96"><a href="#cb49-96" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`reps = 10000`</span>: Number of repeated samples (could be larger but this is good enough to show how things work and doesn&#39;t take too long to run)</span>
-<span id="cb49-97"><a href="#cb49-97" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="in">`replace = TRUE`</span>: Sample with replacement, so observations go back in after each sample and can be sampled again in the next sample</span>
-<span id="cb49-98"><a href="#cb49-98" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`summarise(x_bar = mean(norm_pop))`</span>: Create a data frame with **each of the means** from **each sample**</span>
-<span id="cb49-99"><a href="#cb49-99" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>There are 10,000 samples, so there will be 10,000 means in this</span>
-<span id="cb49-100"><a href="#cb49-100" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>The <span class="in">`ggplot()`</span> code creates a histogram from the data</span>
-<span id="cb49-101"><a href="#cb49-101" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Modification: <span class="in">`bins = 50`</span> increases the bins to make it a little smoother</span>
-<span id="cb49-102"><a href="#cb49-102" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Modification: <span class="in">`xlim(-1.5, 1.5)`</span> sets limits on the x-axis to make the plots more comparable</span>
-<span id="cb49-103"><a href="#cb49-103" aria-hidden="true" tabindex="-1"></a><span class="ss">      * </span>I had to run the plots first without this to see how far I needed to let the X axis go. So for later plots here, run without, look at it, then add this with appropriate numbers to put them all on the same scale</span>
-<span id="cb49-104"><a href="#cb49-104" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Make similar modifications in your own plots later in this document</span>
-<span id="cb49-105"><a href="#cb49-105" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>We&#39;ll spend the next 2 weeks on <span class="in">`ggplot()`</span> so you&#39;ll learn all of this (and more!)</span>
-<span id="cb49-106"><a href="#cb49-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-109"><a href="#cb49-109" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-110"><a href="#cb49-110" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb49-111"><a href="#cb49-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-112"><a href="#cb49-112" aria-hidden="true" tabindex="-1"></a>norm_means10 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(norm_pop) <span class="sc">%&gt;%</span></span>
-<span id="cb49-113"><a href="#cb49-113" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">10</span>, </span>
-<span id="cb49-114"><a href="#cb49-114" aria-hidden="true" tabindex="-1"></a>               <span class="at">reps =</span> <span class="dv">10000</span>, </span>
-<span id="cb49-115"><a href="#cb49-115" aria-hidden="true" tabindex="-1"></a>               <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb49-116"><a href="#cb49-116" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_bar =</span> <span class="fu">mean</span>(norm_pop))</span>
-<span id="cb49-117"><a href="#cb49-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-118"><a href="#cb49-118" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> norm_means10, <span class="fu">aes</span>(<span class="at">x =</span> x_bar)) <span class="sc">+</span></span>
-<span id="cb49-119"><a href="#cb49-119" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
-<span id="cb49-120"><a href="#cb49-120" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>)</span>
-<span id="cb49-121"><a href="#cb49-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-122"><a href="#cb49-122" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-123"><a href="#cb49-123" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Moderate sample: $n$ = 50</span>
-<span id="cb49-124"><a href="#cb49-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-127"><a href="#cb49-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-128"><a href="#cb49-128" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb49-129"><a href="#cb49-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-130"><a href="#cb49-130" aria-hidden="true" tabindex="-1"></a>norm_means50 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(norm_pop) <span class="sc">%&gt;%</span></span>
-<span id="cb49-131"><a href="#cb49-131" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">50</span>, </span>
-<span id="cb49-132"><a href="#cb49-132" aria-hidden="true" tabindex="-1"></a>               <span class="at">reps =</span> <span class="dv">10000</span>, </span>
-<span id="cb49-133"><a href="#cb49-133" aria-hidden="true" tabindex="-1"></a>               <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb49-134"><a href="#cb49-134" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_bar =</span> <span class="fu">mean</span>(norm_pop))</span>
-<span id="cb49-135"><a href="#cb49-135" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-136"><a href="#cb49-136" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> norm_means50, <span class="fu">aes</span>(<span class="at">x =</span> x_bar)) <span class="sc">+</span></span>
-<span id="cb49-137"><a href="#cb49-137" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
-<span id="cb49-138"><a href="#cb49-138" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>) </span>
-<span id="cb49-139"><a href="#cb49-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-140"><a href="#cb49-140" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-141"><a href="#cb49-141" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Large sample: $n$ = 100</span>
-<span id="cb49-142"><a href="#cb49-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-145"><a href="#cb49-145" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-146"><a href="#cb49-146" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb49-147"><a href="#cb49-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-148"><a href="#cb49-148" aria-hidden="true" tabindex="-1"></a>norm_means100 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(norm_pop) <span class="sc">%&gt;%</span></span>
-<span id="cb49-149"><a href="#cb49-149" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">100</span>, </span>
-<span id="cb49-150"><a href="#cb49-150" aria-hidden="true" tabindex="-1"></a>               <span class="at">reps =</span> <span class="dv">10000</span>, </span>
-<span id="cb49-151"><a href="#cb49-151" aria-hidden="true" tabindex="-1"></a>               <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb49-152"><a href="#cb49-152" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_bar =</span> <span class="fu">mean</span>(norm_pop))</span>
-<span id="cb49-153"><a href="#cb49-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-154"><a href="#cb49-154" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> norm_means100, <span class="fu">aes</span>(<span class="at">x =</span> x_bar)) <span class="sc">+</span></span>
-<span id="cb49-155"><a href="#cb49-155" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>) <span class="sc">+</span></span>
-<span id="cb49-156"><a href="#cb49-156" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="sc">-</span><span class="fl">1.5</span>, <span class="fl">1.5</span>)</span>
-<span id="cb49-157"><a href="#cb49-157" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-158"><a href="#cb49-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-159"><a href="#cb49-159" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Compare estimates</span></span>
-<span id="cb49-160"><a href="#cb49-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-161"><a href="#cb49-161" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Compare means for each sample size</span>
-<span id="cb49-162"><a href="#cb49-162" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-165"><a href="#cb49-165" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-166"><a href="#cb49-166" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(norm_means10<span class="sc">$</span>x_bar)</span>
-<span id="cb49-167"><a href="#cb49-167" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(norm_means50<span class="sc">$</span>x_bar)</span>
-<span id="cb49-168"><a href="#cb49-168" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(norm_means100<span class="sc">$</span>x_bar)</span>
-<span id="cb49-169"><a href="#cb49-169" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-170"><a href="#cb49-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-171"><a href="#cb49-171" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Compare standard deviations for each sample size</span>
-<span id="cb49-172"><a href="#cb49-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-175"><a href="#cb49-175" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-176"><a href="#cb49-176" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(norm_means10<span class="sc">$</span>x_bar)</span>
-<span id="cb49-177"><a href="#cb49-177" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(norm_means50<span class="sc">$</span>x_bar)</span>
-<span id="cb49-178"><a href="#cb49-178" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(norm_means100<span class="sc">$</span>x_bar)</span>
-<span id="cb49-179"><a href="#cb49-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-180"><a href="#cb49-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-181"><a href="#cb49-181" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Compare variances for each sample size</span>
-<span id="cb49-182"><a href="#cb49-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-185"><a href="#cb49-185" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-186"><a href="#cb49-186" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(norm_means10<span class="sc">$</span>x_bar)</span>
-<span id="cb49-187"><a href="#cb49-187" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(norm_means50<span class="sc">$</span>x_bar)</span>
-<span id="cb49-188"><a href="#cb49-188" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(norm_means100<span class="sc">$</span>x_bar)</span>
-<span id="cb49-189"><a href="#cb49-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-190"><a href="#cb49-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-191"><a href="#cb49-191" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How does each value correspond to what you&#39;d expect based on the mathematically-derived sampling distribution?</span>
-<span id="cb49-192"><a href="#cb49-192" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>$\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$</span>
-<span id="cb49-193"><a href="#cb49-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-194"><a href="#cb49-194" aria-hidden="true" tabindex="-1"></a><span class="fu">### Bernoulli population: $population \sim B(0.3)$</span></span>
-<span id="cb49-195"><a href="#cb49-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-196"><a href="#cb49-196" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Create a population</span></span>
-<span id="cb49-197"><a href="#cb49-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-198"><a href="#cb49-198" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`rbinom()`</span> creates a random variable that follows a **binomial** distribution </span>
-<span id="cb49-199"><a href="#cb49-199" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>First argument = Number of observations (population size)</span>
-<span id="cb49-200"><a href="#cb49-200" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Second argument = number of trials (here, just 1 for a **Bernoulli** trial)</span>
-<span id="cb49-201"><a href="#cb49-201" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Third argument = $p$ (probability of success)</span>
-<span id="cb49-202"><a href="#cb49-202" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Create a very large population (N = 1,000,000) with a specified mean and variance</span>
-<span id="cb49-203"><a href="#cb49-203" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Confirm that the mean and SD are what you think they should be</span>
-<span id="cb49-204"><a href="#cb49-204" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-207"><a href="#cb49-207" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-208"><a href="#cb49-208" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb49-209"><a href="#cb49-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-210"><a href="#cb49-210" aria-hidden="true" tabindex="-1"></a>bern_pop <span class="ot">&lt;-</span> <span class="fu">rbinom</span>(<span class="dv">1000000</span>, <span class="dv">1</span>, <span class="fl">0.3</span>)</span>
-<span id="cb49-211"><a href="#cb49-211" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(bern_pop)</span>
-<span id="cb49-212"><a href="#cb49-212" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(bern_pop)</span>
-<span id="cb49-213"><a href="#cb49-213" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(bern_pop)</span>
-<span id="cb49-214"><a href="#cb49-214" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-215"><a href="#cb49-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-216"><a href="#cb49-216" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Sample from the population</span></span>
-<span id="cb49-217"><a href="#cb49-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-218"><a href="#cb49-218" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb49-219"><a href="#cb49-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-220"><a href="#cb49-220" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Remember to adjust the X axis using <span class="in">`xlim()`</span> (as in the Normal section) to have the same range for each plot.</span>
-<span id="cb49-221"><a href="#cb49-221" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>You&#39;ll need to make each plot, see what they look like, and then adjust the X axis accordingly.</span>
-<span id="cb49-222"><a href="#cb49-222" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-223"><a href="#cb49-223" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb49-224"><a href="#cb49-224" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-225"><a href="#cb49-225" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Small sample: $n$ = 10</span>
-<span id="cb49-226"><a href="#cb49-226" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-229"><a href="#cb49-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-230"><a href="#cb49-230" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb49-231"><a href="#cb49-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-232"><a href="#cb49-232" aria-hidden="true" tabindex="-1"></a>bern_means10 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(bern_pop) <span class="sc">%&gt;%</span></span>
-<span id="cb49-233"><a href="#cb49-233" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">10</span>, </span>
-<span id="cb49-234"><a href="#cb49-234" aria-hidden="true" tabindex="-1"></a>               <span class="at">reps =</span> <span class="dv">10000</span>, </span>
-<span id="cb49-235"><a href="#cb49-235" aria-hidden="true" tabindex="-1"></a>               <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb49-236"><a href="#cb49-236" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_bar =</span> <span class="fu">mean</span>(bern_pop))</span>
-<span id="cb49-237"><a href="#cb49-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-238"><a href="#cb49-238" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> bern_means10, <span class="fu">aes</span>(<span class="at">x =</span> x_bar)) <span class="sc">+</span></span>
-<span id="cb49-239"><a href="#cb49-239" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>)</span>
-<span id="cb49-240"><a href="#cb49-240" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-241"><a href="#cb49-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-242"><a href="#cb49-242" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Moderate sample: $n$ = 50</span>
-<span id="cb49-243"><a href="#cb49-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-246"><a href="#cb49-246" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-247"><a href="#cb49-247" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-248"><a href="#cb49-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-249"><a href="#cb49-249" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Large sample: $n$ = 100</span>
-<span id="cb49-250"><a href="#cb49-250" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-253"><a href="#cb49-253" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-254"><a href="#cb49-254" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-255"><a href="#cb49-255" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-256"><a href="#cb49-256" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Compare estimates</span></span>
-<span id="cb49-257"><a href="#cb49-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-258"><a href="#cb49-258" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Compare means for each sample size</span>
-<span id="cb49-259"><a href="#cb49-259" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-262"><a href="#cb49-262" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-263"><a href="#cb49-263" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-264"><a href="#cb49-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-265"><a href="#cb49-265" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Compare standard deviations for each sample size</span>
-<span id="cb49-266"><a href="#cb49-266" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-269"><a href="#cb49-269" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-270"><a href="#cb49-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-271"><a href="#cb49-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-272"><a href="#cb49-272" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Compare variances for each sample size</span>
-<span id="cb49-273"><a href="#cb49-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-276"><a href="#cb49-276" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-277"><a href="#cb49-277" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-278"><a href="#cb49-278" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-279"><a href="#cb49-279" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How does each value correspond to what you&#39;d expect based on the mathematically-derived sampling distribution **for a normally distributed population**?</span>
-<span id="cb49-280"><a href="#cb49-280" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>$\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$</span>
-<span id="cb49-281"><a href="#cb49-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-282"><a href="#cb49-282" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-283"><a href="#cb49-283" aria-hidden="true" tabindex="-1"></a><span class="fu">### Poisson population: $population \sim Poisson(1.5)$</span></span>
-<span id="cb49-284"><a href="#cb49-284" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-285"><a href="#cb49-285" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Create a population</span></span>
-<span id="cb49-286"><a href="#cb49-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-287"><a href="#cb49-287" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`rpois()`</span> creates a random variable that follows a **Poisson** distribution </span>
-<span id="cb49-288"><a href="#cb49-288" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>First argument = Number of observations (population size)</span>
-<span id="cb49-289"><a href="#cb49-289" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Second argument = $\lambda$ (mean and variance)</span>
-<span id="cb49-290"><a href="#cb49-290" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span>Remember that $\lambda$ is the variance, but we&#39;re going to look at the **standard deviation** which is the *square root* of the variance</span>
-<span id="cb49-291"><a href="#cb49-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-294"><a href="#cb49-294" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-295"><a href="#cb49-295" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb49-296"><a href="#cb49-296" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-297"><a href="#cb49-297" aria-hidden="true" tabindex="-1"></a>pois_pop <span class="ot">&lt;-</span> <span class="fu">rpois</span>(<span class="dv">1000000</span>, <span class="fl">1.5</span>)</span>
-<span id="cb49-298"><a href="#cb49-298" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(pois_pop)</span>
-<span id="cb49-299"><a href="#cb49-299" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(pois_pop)</span>
-<span id="cb49-300"><a href="#cb49-300" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(pois_pop)</span>
-<span id="cb49-301"><a href="#cb49-301" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-302"><a href="#cb49-302" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-303"><a href="#cb49-303" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Sample from the population</span></span>
-<span id="cb49-304"><a href="#cb49-304" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-305"><a href="#cb49-305" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb49-306"><a href="#cb49-306" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-307"><a href="#cb49-307" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Remember to adjust the X axis using <span class="in">`xlim()`</span> (as in the Normal section) to have the same range for each plot.</span>
-<span id="cb49-308"><a href="#cb49-308" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>You&#39;ll need to make each plot, see what they look like, and then adjust the X axis accordingly.</span>
-<span id="cb49-309"><a href="#cb49-309" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-310"><a href="#cb49-310" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb49-311"><a href="#cb49-311" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-312"><a href="#cb49-312" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Small sample: $n$ = 10</span>
-<span id="cb49-313"><a href="#cb49-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-316"><a href="#cb49-316" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-317"><a href="#cb49-317" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
-<span id="cb49-318"><a href="#cb49-318" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-319"><a href="#cb49-319" aria-hidden="true" tabindex="-1"></a>pois_means10 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(pois_pop) <span class="sc">%&gt;%</span></span>
-<span id="cb49-320"><a href="#cb49-320" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rep_sample_n</span>(<span class="at">size =</span> <span class="dv">10</span>, </span>
-<span id="cb49-321"><a href="#cb49-321" aria-hidden="true" tabindex="-1"></a>               <span class="at">reps =</span> <span class="dv">10000</span>, </span>
-<span id="cb49-322"><a href="#cb49-322" aria-hidden="true" tabindex="-1"></a>               <span class="at">replace =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb49-323"><a href="#cb49-323" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">x_bar =</span> <span class="fu">mean</span>(pois_pop))</span>
-<span id="cb49-324"><a href="#cb49-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-325"><a href="#cb49-325" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> pois_means10, <span class="fu">aes</span>(<span class="at">x =</span> x_bar)) <span class="sc">+</span></span>
-<span id="cb49-326"><a href="#cb49-326" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">50</span>)</span>
-<span id="cb49-327"><a href="#cb49-327" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-328"><a href="#cb49-328" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-329"><a href="#cb49-329" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Moderate sample: $n$ = 50</span>
-<span id="cb49-330"><a href="#cb49-330" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-333"><a href="#cb49-333" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-334"><a href="#cb49-334" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-335"><a href="#cb49-335" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-336"><a href="#cb49-336" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Large sample: $n$ = 100</span>
-<span id="cb49-337"><a href="#cb49-337" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-340"><a href="#cb49-340" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-341"><a href="#cb49-341" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-342"><a href="#cb49-342" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-343"><a href="#cb49-343" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Compare estimates</span></span>
-<span id="cb49-344"><a href="#cb49-344" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-345"><a href="#cb49-345" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Compare means for each sample size</span>
-<span id="cb49-346"><a href="#cb49-346" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-349"><a href="#cb49-349" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-350"><a href="#cb49-350" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-351"><a href="#cb49-351" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-352"><a href="#cb49-352" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Compare standard deviations for each sample size</span>
-<span id="cb49-353"><a href="#cb49-353" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-356"><a href="#cb49-356" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-357"><a href="#cb49-357" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-358"><a href="#cb49-358" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-359"><a href="#cb49-359" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Compare variances for each sample size</span>
-<span id="cb49-360"><a href="#cb49-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-363"><a href="#cb49-363" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb49-364"><a href="#cb49-364" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb49-365"><a href="#cb49-365" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-366"><a href="#cb49-366" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>How does each value correspond to what you&#39;d expect based on the mathematically-derived sampling distribution **for a normally distributed population**?</span>
-<span id="cb49-367"><a href="#cb49-367" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>$\bar{X} \sim \mathcal{N}(\mu, \frac{\sigma^2}{n})$</span>
-<span id="cb49-368"><a href="#cb49-368" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-369"><a href="#cb49-369" aria-hidden="true" tabindex="-1"></a><span class="fu">## Summarize results</span></span>
-<span id="cb49-370"><a href="#cb49-370" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb49-371"><a href="#cb49-371" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>In general, how does **sample size** impact the **standard error**?</span>
-<span id="cb49-372"><a href="#cb49-372" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>i.e., the standard deviation of the sampling distribution?</span>
-<span id="cb49-373"><a href="#cb49-373" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Do larger samples lead to smaller or larger standard errors?</span>
-<span id="cb49-374"><a href="#cb49-374" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>In general, how does the **population distribution** impact the **sampling distribution**?</span>
-<span id="cb49-375"><a href="#cb49-375" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Based on: Visual inspection of the distribution</span>
-<span id="cb49-376"><a href="#cb49-376" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Based on: Estimates of standard error</span>
-<span id="cb49-377"><a href="#cb49-377" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb49-378"><a href="#cb49-378" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb49-379"><a href="#cb49-379" aria-hidden="true" tabindex="-1"></a>  </span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> &quot;BTS 510 Lab 6&quot;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">    embed-resources: true</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">    self-contained-math: true</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">    html-math-method: katex</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co">    code-tools: true</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-bg: true</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="co">    code-block-border-left: &quot;#31BAE9&quot;</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: setup</span></span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">12345</span>)</span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Stat2Data)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_classic</span>(<span class="at">base_size =</span> <span class="dv">16</span>))</span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="fu">## Learning objectives</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Describe the logic of **linear regression** </span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Describe the **assumptions** of linear regression</span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Briefly **present results** of linear regression</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Use a **regression equation** to summarize a model</span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Compare and contrast **observed**, **predicted**, and **residual** values</span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Data </span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="in">`ICU`</span> data from the **Stat2Data** package</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`ID`</span>: Patient ID code</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Survive`</span>: 1 = patient survived to discharge or 0 = patient died</span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Age`</span>: Age (in years)</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`AgeGroup`</span>: 1 = young (under 50), 2 = middle (50-69), 3 = old (70+)</span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Sex`</span>: 1 = female or 0 = male</span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Infection`</span>: 1 = infection suspected or 0 = no infection</span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`SysBP`</span>: Systolic blood pressure (in mm of Hg)</span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Pulse`</span>: Heart rate (beats per minute)</span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span><span class="in">`Emergency`</span>: 1 = emergency admission or 0 = elective admission</span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="fu">## Tasks</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>**Does blood pressure differ between those with a suspected infection and those without?** *Fit a linear regression to answer this question.*</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a><span class="ss">2. </span>Write up the **interpretation** of the model, including:</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Intercept value, test statistic, $p$-value</span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Intercept interpretation (in words)</span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Slope value, test statistic, $p$-value</span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Slope interpretation (in words)</span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>$R^2$ value, test statistic, $p$-value</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>$R^2$ interpretation (in words)</span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>What is the **predicted blood pressure** for someone *with a suspected infection*? What is the **predicted blood pressure** for someone *without a suspected infection*?</span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="ss">4. </span>Calculate the **predicted** and **residual** values for each person and add them to the original dataset. **Does it looks like the assumptions are satisfied?** Make plots to help you decide:</span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Residual vs predictor</span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Q-Q plot of residuals</span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Histogram of residuals (all together and separately for the two groups)</span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="ss">5. </span>**Does blood pressure differ between those with a suspected infection and those without? How?** (Brief, simple words, no jargon, no statistics.) </span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a>Bonus. A linear regression with only 1 binary predictor (e.g., <span class="in">`Infection`</span>) is **exactly equivalent** to a (independent samples) $t$-test. (Notice that the test for the coefficient / slope in the regression **is** a $t$-test -- this is not a coincidence.) You just get slightly different pieces of information from the two analyses. Run the $t$-test for this same analysis to see what is the same and what is different. This uses the `t.test()` function from the **stats** package (always loaded by default).</span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="in">`t.test(ICU$SysBP ~ ICU$Infection, alternative = &quot;two.sided&quot;, var.equal = TRUE)`</span></span>
 </code></pre></div><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal><i class="bi"></i></button></div>
 </div></div></div></div></div>
 </div> <!-- /content -->

@@ -137,7 +137,7 @@ title: "Materials"
 
 :::
 
-::: {.callout-tip title="Week 5" collapse=false}
+::: {.callout-tip title="Week 5" collapse=true}
 
 ## Week 5: More plots
 
@@ -165,34 +165,32 @@ title: "Materials"
 
 :::
 
-<!-- ::: {.callout-tip title="Week 6" collapse=true} -->
+::: {.callout-tip title="Week 6" collapse=false}
 
-<!-- ## Week 6: Linear regression -->
+## Week 6: Linear regression
 
-<!-- ### Learning objectives -->
+### Learning objectives
 
-<!-- * Describe the logic of **linear regression**  -->
-<!-- * Describe the **assumptions** of linear regression -->
-<!-- * Briefly **present results** of linear regression -->
-<!-- * Use a **regression equation** to summarize a model -->
-<!-- * Compare and contrast **observed**, **predicted**, and **residual** values -->
+* Describe the logic of **linear regression**
+* Describe the **assumptions** of linear regression
+* Briefly **present results** of linear regression
+* Use a **regression equation** to summarize a model
+* Compare and contrast **observed**, **predicted**, and **residual** values
 
-<!-- ### Before class: Lecture  -->
+### Before class: Lecture
 
-<!-- * [Lecture 6](https://youtu.be/vpc5tPeeh9I){target="_blank"}  -->
-<!-- * [Lecture survey](https://forms.gle/95Q3NFnqLKSSQ22K8){target="_blank"}: Complete by Wednesday, October 15 at 8pm -->
-<!-- * [Slides (html)](/slides/BTS510-25-6.qmd){target="_blank"} -->
+* [Lecture 6](https://youtu.be/vpc5tPeeh9I){target="_blank"}
+* [Slides (html)](/slides/BTS510-25-6.qmd){target="_blank"}
 
-<!-- ### During class: Lab -->
+### During class: Lab
 
-<!-- * [Lab 6 (html with link to code)](lab/BTS510-25-lab6.qmd){target="_blank"} -->
-<!-- * [Completed lab 6 from class](/labs_comp/Lab 6.qmd){target="_blank"} -->
+* [Lab 6 (html with link to code)](lab/BTS510-25-lab6.qmd){target="_blank"}
 
-<!-- ### After class: Assignment -->
+### After class: Assignment
 
-<!-- * **No homework this week** -->
+* **No homework this week**
 
-<!-- ::: -->
+:::
 
 <!-- ::: {.callout-tip title="Week 7" collapse=true} -->
 
