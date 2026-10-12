@@ -165,7 +165,7 @@ title: "Materials"
 
 :::
 
-::: {.callout-tip title="Week 6" collapse=false}
+::: {.callout-tip title="Week 6" collapse=true}
 
 ## Week 6: Linear regression
 
@@ -192,35 +192,32 @@ title: "Materials"
 
 :::
 
-<!-- ::: {.callout-tip title="Week 7" collapse=true} -->
+::: {.callout-tip title="Week 7" collapse=false}
 
-<!-- ## Week 7: Linear regression -->
+## Week 7: Linear regression
 
-<!-- ### Learning objectives -->
+### Learning objectives
 
-<!-- * **Add predictors** to a linear regression model -->
-<!-- * Interpret **partial regression coefficients** -->
-<!-- * **Re-code predictors** to answer your research questions -->
-<!-- * **Compare** different models using $R^2_{change}$ -->
+* **Add predictors** to a linear regression model
+* Interpret **partial regression coefficients**
+* **Re-code predictors** to answer your research questions
+* **Compare** different models using $R^2_{change}$
 
-<!-- ### Before class: Lecture  -->
+### Before class: Lecture
 
-<!-- * [Lecture 7](https://youtu.be/4RlIZbH6oro){target="_blank"}  -->
-<!-- * [Lecture survey](https://forms.gle/1i8YJbLsuDDtDSwdA){target="_blank"}: Complete by Wednesday, October 22 at 8pm -->
-<!-- * [Slides (html)](/slides/BTS510-25-7.qmd){target="_blank"} -->
-<!--   * **Note**: Errors *in the video* on slides 18 and 19 (re: degrees of freedom) are fixed on the slides here -->
+* [Lecture 7](https://youtu.be/4RlIZbH6oro){target="_blank"}
+* [Slides (html)](/slides/BTS510-25-7.qmd){target="_blank"}
+  * **Note**: Errors *in the video* on slides 18 and 19 (re: degrees of freedom) are fixed on the slides here
 
-<!-- ### During class: Lab -->
+### During class: Lab
 
-<!-- * [Lab 7 (html with link to code)](lab/BTS510-25-lab7.qmd){target="_blank"} -->
-<!-- * [Completed lab 7 from class](/labs_comp/Lab 7.qmd){target="_blank"} -->
-<!-- * [Photo of whiteboard from class](whiteboard 102325.jpg){target="_blank"} -->
+* [Lab 7 (html with link to code)](lab/BTS510-25-lab7.qmd){target="_blank"}
 
-<!-- ### After class: Assignment -->
+### After class: Assignment
 
-<!-- * [Homework 3](assignments/hw3.qmd){target="_blank"} -->
+* [Homework 3](assignments/hw3.qmd){target="_blank"}
 
-<!-- ::: -->
+:::
 
 <!-- ::: {.callout-tip title="Week 8" collapse=true} -->
 

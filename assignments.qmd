@@ -18,11 +18,11 @@ title: "Assignments"
 
 :::
 
-<!-- ::: {.callout-note title="Part 2: Due November 1, 2026" collapse=true} -->
+::: {.callout-note title="Part 2: Due November 1, 2026" collapse=false}
 
-<!-- * [Proposal](assignments/proposal.qmd){target="_blank"} -->
+* [Proposal](assignments/proposal.qmd){target="_blank"}
 
-<!-- ::: -->
+:::
 
 <!-- ::: {.callout-note title="Part 3: Due December 17, 2026" collapse=false} -->
 
@@ -45,17 +45,17 @@ title: "Assignments"
 :::
 
 
-::: {.callout-tip title="Homework 2: Due October 4, 2026" collapse=false}
+::: {.callout-tip title="Homework 2: Due October 4, 2026" collapse=true}
 
 * [Homework 2](assignments/hw2.qmd){target="_blank"}
 
 :::
 
-<!-- ::: {.callout-tip title="Homework 3: Due October 18, 2026" collapse=true} -->
+::: {.callout-tip title="Homework 3: Due October 18, 2026" collapse=false}
 
-<!-- * [Homework 3](assignments/hw3.qmd){target="_blank"} -->
+* [Homework 3](assignments/hw3.qmd){target="_blank"}
 
-<!-- ::: -->
+:::
 
 <!-- ::: {.callout-tip title="Homework 4: Due November 8, 2026" collapse=true} -->
 
