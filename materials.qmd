@@ -243,7 +243,7 @@ title: "Materials"
 
 :::
 
-::: {.callout-tip title="Week 9" collapse=false}
+::: {.callout-tip title="Week 9" collapse=true}
 
 ## Week 9: Linear regression
 
@@ -268,32 +268,29 @@ title: "Materials"
 
 :::
 
-<!-- ::: {.callout-tip title="Week 10" collapse=true} -->
+::: {.callout-tip title="Week 10" collapse=false}
 
-<!-- ## Week 10: Linear regression -->
+## Week 10: Linear regression
 
-<!-- ### Learning objectives -->
+### Learning objectives
 
-<!-- * **Run models** with interaction effects to assess conditional effects of predictors -->
-<!-- * **Probe** interaction models to fully understand all effects -->
+* **Run models** with interaction effects to assess conditional effects of predictors
+* **Probe** interaction models to fully understand all effects
 
-<!-- ### Before class: Lecture  -->
+### Before class: Lecture
 
-<!-- * [Lecture 10](https://youtu.be/dFVZkOHuauk){target="_blank"} -->
-<!-- * [Lecture survey](https://forms.gle/FrV8DsL8icyQmUBB6){target="_blank"}: Complete by Wednesday, November 12 at 8pm -->
-<!-- * [Slides (html)](/slides/BTS510-25-10.qmd){target="_blank"} -->
+* [Lecture 10](https://youtu.be/dFVZkOHuauk){target="_blank"}
+* [Slides (html)](/slides/BTS510-25-10.qmd){target="_blank"}
 
-<!-- ### During class: Lab -->
+### During class: Lab
 
-<!-- * [Lab 10 (html with link to code)](lab/BTS510-25-lab10.qmd){target="_blank"} -->
-<!-- * [Completed lab 10 from class](/labs_comp/Lab 10.qmd){target="_blank"} -->
-<!-- * [Photo of whiteboard from class](whiteboard 111325.jpg){target="_blank"} -->
+* [Lab 10 (html with link to code)](lab/BTS510-25-lab10.qmd){target="_blank"}
 
-<!-- ### After class: Assignment -->
+### After class: Assignment
 
-<!-- * [Homework 4](assignments/hw4.qmd){target="_blank"} -->
+* [Homework 4](assignments/hw4.qmd){target="_blank"}
 
-<!-- ::: -->
+:::
 
 <!-- ::: {.callout-tip title="Week 11" collapse=true} -->
 
