@@ -13,8 +13,10 @@ format:
 
 * **Due Sunday, November 16 by end of day (midnight)**
 
-* Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF. Email all 3 files (.qmd, .html, .pdf) to Stefany and Yujie.
-    * Remember to include `embed-resources: true` in the `html` options. If you don't, we won't see any of your figures when you send the files. 
+* Complete the assignment in a Quarto (.qmd) document and render it to HTML and PDF.
+  * Upload all three files (.qmd, .html, .pdf) to the assignment on Canvas.
+
+* Please write your response to each question. Don't *just* print out your figure (though obviously **also** do that. Just make sure to also write / type your answer based on the figure.)
     
 ## Data
 
